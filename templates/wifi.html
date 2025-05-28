@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoRa Control Pro - WiFi</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="/static/touch-effects.css" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #5b247a, #1bcedf);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        color: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Particules d'arrière-plan */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .particle {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+          opacity: 0.3;
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+          opacity: 1;
+        }
+      }
+
+      .navbar {
+        position: fixed;
+        bottom: 20px;
+        display: flex;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        padding: 10px;
+        z-index: 1000;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+        font-size: 22px;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .nav-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-5px);
+      }
+
+      .nav-btn.active {
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .ip-badge {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        padding: 10px 15px;
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .ip-badge i {
+        margin-right: 8px;
+        color: #66e0ff;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 30px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 10;
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .title {
+        font-size: 2.2em;
+        font-weight: 700;
+        background: linear-gradient(135deg, #66e0ff 0%, #f7b0ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 10px;
+        text-shadow: 0 0 30px rgba(102, 224, 255, 0.3);
+      }
+
+      .subtitle {
+        font-size: 1.1em;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 300;
+      }
+
+      .wifi-status {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .status-icon {
+        font-size: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .connected-icon {
+        color: #4cd964;
+      }
+
+      .disconnected-icon {
+        color: #ff3b30;
+      }
+
+      .status-text {
+        flex: 1;
+        padding-left: 20px;
+      }
+
+      .status-title {
+        font-weight: 600;
+        font-size: 1.2em;
+        margin-bottom: 5px;
+      }
+
+      .status-subtitle {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9em;
+      }
+
+      .signal-strength {
+        display: inline-block;
+        margin-left: 10px;
+      }
+
+      .wifi-list {
+        margin-bottom: 20px;
+        max-height: 300px;
+        overflow-y: auto;
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 5px;
+      }
+
+      .wifi-list::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .wifi-list::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 3px;
+      }
+
+      .wifi-list::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+      }
+
+      .wifi-list::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .wifi-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .wifi-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .wifi-item.connected {
+        background: rgba(76, 217, 100, 0.2);
+      }
+
+      .wifi-name {
+        display: flex;
+        align-items: center;
+      }
+
+      .wifi-icon {
+        margin-right: 12px;
+        font-size: 1.2em;
+      }
+
+      .wifi-ssid {
+        font-weight: 500;
+      }
+
+      .wifi-security {
+        margin-left: 5px;
+        font-size: 0.8em;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .wifi-signal {
+        display: flex;
+        align-items: center;
+      }
+
+      .signal-bar {
+        position: relative;
+        width: 4px;
+        height: 15px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 0 1px;
+        border-radius: 2px;
+      }
+
+      .signal-fill {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 2px;
+      }
+
+      .control-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-weight: 600;
+        font-size: 1em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn i {
+        margin-right: 8px;
+      }
+
+      .btn.primary {
+        background: linear-gradient(135deg, #66e0ff, #83a4d4);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .btn.primary:hover {
+        background: linear-gradient(135deg, #83a4d4, #66e0ff);
+      }
+
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+      }
+
+      .modal {
+        background: rgba(30, 30, 30, 0.95);
+        border-radius: 20px;
+        padding: 30px;
+        width: 90%;
+        max-width: 400px;
+        transform: scale(0.8);
+        opacity: 0;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .modal.active {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .modal-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .modal-title {
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .modal-subtitle {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9em;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.9em;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        color: white;
+        font-size: 1em;
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #66e0ff;
+        box-shadow: 0 0 0 2px rgba(102, 224, 255, 0.3);
+      }
+
+      .modal-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .refresh-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .refresh-button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(45deg);
+      }
+
+      .hourglass {
+        display: inline-block;
+        font-size: 1.2em;
+        animation: rotate 2s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      #popup {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100px);
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 16px;
+        font-size: 1em;
+        font-weight: 600;
+        display: none;
+        z-index: 1000;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .popup-error {
+        background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 25px 20px;
+          max-width: 90%;
+        }
+
+        .title {
+          font-size: 1.8em;
+        }
+
+        .status-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 24px;
+        }
+
+        .wifi-item {
+          padding: 12px;
+        }
+
+        .btn {
+          padding: 12px;
+        }
+
+        .nav-btn {
+          width: 50px;
+          height: 50px;
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <!-- Badge d'adresse IP -->
+    <div class="ip-badge" id="ipBadge">
+      <i class="fas fa-network-wired"></i>
+      <span id="ipAddress">Chargement...</span>
+    </div>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+      <a href="/wifi.html" class="nav-btn active">
+        <i class="fas fa-wifi"></i>
+      </a>
+      <div class="nav-btn" onclick="window.location.reload()">
+        <i class="fas fa-sync-alt"></i>
+      </div>
+      <div
+        class="nav-btn"
+        onclick="showExitKioskModal()"
+        title="Quitter le mode kiosque"
+      >
+        <i class="fas fa-sign-out-alt"></i>
+      </div>
+    </div>
+
+    <div class="container" id="mainContainer">
+      <div class="header">
+        <h1 class="title"><i class="fas fa-wifi"></i> Gestion WiFi</h1>
+        <p class="subtitle">Contrôlez vos connexions sans fil</p>
+      </div>
+
+      <div class="wifi-status" id="wifiStatus">
+        <div class="status-icon" id="statusIcon">
+          <i class="fas fa-wifi"></i>
+        </div>
+        <div class="status-text">
+          <div class="status-title" id="statusTitle">Chargement...</div>
+          <div class="status-subtitle" id="statusSubtitle"></div>
+        </div>
+      </div>
+
+      <div class="refresh-button" onclick="scanNetworks()">
+        <i class="fas fa-sync-alt"></i>
+      </div>
+
+      <div class="wifi-list" id="wifiList">
+        <!-- Les réseaux WiFi seront affichés ici -->
+      </div>
+
+      <div class="control-buttons">
+        <button class="btn primary" id="scanButton" onclick="scanNetworks()">
+          <i class="fas fa-search"></i> Scanner
+        </button>
+        <button class="btn" id="disconnectButton" onclick="disconnectWifi()">
+          <i class="fas fa-unlink"></i> Déconnecter
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal de connexion WiFi -->
+    <div class="modal-overlay" id="connectModal">
+      <div class="modal" id="modalContent">
+        <div class="modal-header">
+          <div class="modal-title">Connexion WiFi</div>
+          <div class="modal-subtitle" id="modalSsid">SSID</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Mot de passe</label>
+          <input
+            type="password"
+            id="wifiPassword"
+            class="form-input"
+            placeholder="Laissez vide si réseau ouvert"
+          />
+        </div>
+
+        <div class="modal-buttons">
+          <button class="btn primary" onclick="connectToNetwork()">
+            <i class="fas fa-check"></i> Connecter
+          </button>
+          <button class="btn" onclick="hideConnectModal()">
+            <i class="fas fa-times"></i> Annuler
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de sortie du mode kiosque -->
+    <div class="modal-overlay" id="exitKioskModal">
+      <div class="modal" id="exitModalContent">
+        <div class="modal-header">
+          <div class="modal-title">Quitter le mode kiosque</div>
+          <div class="modal-subtitle">Choisissez une option</div>
+        </div>
+
+        <div class="form-group">
+          <div style="text-align: center; margin-bottom: 20px">
+            <i
+              class="fas fa-sign-out-alt"
+              style="font-size: 3em; color: #ff9f43"
+            ></i>
+          </div>
+          <p style="margin-bottom: 20px; text-align: center">
+            Que souhaitez-vous faire ?
+          </p>
+        </div>
+
+        <div class="modal-buttons" style="flex-direction: column; gap: 15px">
+          <button class="btn primary" onclick="exitKioskMode()">
+            <i class="fas fa-desktop"></i> Retour au bureau
+          </button>
+          <button
+            class="btn"
+            style="background: linear-gradient(135deg, #ff9f43, #ff7700)"
+            onclick="restartSystem()"
+          >
+            <i class="fas fa-sync-alt"></i> Redémarrer
+          </button>
+          <button
+            class="btn"
+            style="background: linear-gradient(135deg, #ee5253, #c0392b)"
+            onclick="shutdownSystem()"
+          >
+            <i class="fas fa-power-off"></i> Éteindre
+          </button>
+          <button
+            class="btn"
+            onclick="hideExitKioskModal()"
+            style="background: rgba(255, 255, 255, 0.1)"
+          >
+            <i class="fas fa-times"></i> Annuler
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="popup"></div>
+
+    <script>
+      let selectedNetwork = null;
+
+      // Animation d'entrée
+      gsap.to("#mainContainer", {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+
+      // Création des particules
+      function createParticles() {
+        const particlesContainer = document.getElementById("particles");
+        for (let i = 0; i < 50; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.top = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 6 + "s";
+          particle.style.animationDuration = Math.random() * 3 + 3 + "s";
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      // Récupérer l'adresse IP
+      function getIpAddress() {
+        fetch("/get-ip")
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "success") {
+              const ipInfo = data.ip_info;
+              let ipDisplay = "";
+
+              // Priorité à wlan0, puis eth0, puis default
+              if (ipInfo.wlan0) {
+                ipDisplay = `WiFi: ${ipInfo.wlan0}`;
+              } else if (ipInfo.eth0) {
+                ipDisplay = `Ethernet: ${ipInfo.eth0}`;
+              } else if (ipInfo.default) {
+                ipDisplay = ipInfo.default;
+              } else {
+                ipDisplay = "Non connecté";
+              }
+
+              document.getElementById("ipAddress").textContent = ipDisplay;
+            } else {
+              document.getElementById("ipAddress").textContent =
+                "Non disponible";
+            }
+          })
+          .catch((err) => {
+            console.error("Erreur lors de la récupération de l'IP:", err);
+            document.getElementById("ipAddress").textContent = "Erreur";
+          });
+      }
+
+      // Vérifier le statut WiFi
+      function checkWifiStatus() {
+        fetch("/wifi-status")
+          .then((res) => res.json())
+          .then((data) => {
+            const statusIcon = document.getElementById("statusIcon");
+            const statusTitle = document.getElementById("statusTitle");
+            const statusSubtitle = document.getElementById("statusSubtitle");
+            const disconnectButton =
+              document.getElementById("disconnectButton");
+
+            if (data.status === "success" && data.connected) {
+              statusIcon.innerHTML =
+                '<i class="fas fa-wifi connected-icon"></i>';
+              statusTitle.textContent = "Connecté";
+              statusSubtitle.innerHTML = `Réseau: <strong>${data.ssid}</strong>
+                <span class="signal-strength">
+                  <i class="fas fa-signal"></i> ${data.signal}%
+                </span>`;
+              disconnectButton.disabled = false;
+            } else {
+              statusIcon.innerHTML =
+                '<i class="fas fa-wifi-slash disconnected-icon"></i>';
+              statusTitle.textContent = "Déconnecté";
+              statusSubtitle.textContent = "Aucun réseau WiFi connecté";
+              disconnectButton.disabled = true;
+            }
+          })
+          .catch((err) => {
+            console.error("Erreur lors de la vérification du WiFi:", err);
+          });
+      }
+
+      // Scanner les réseaux WiFi
+      function scanNetworks() {
+        const scanButton = document.getElementById("scanButton");
+        const wifiList = document.getElementById("wifiList");
+
+        // Afficher l'animation de chargement
+        scanButton.innerHTML = '<span class="hourglass">⏳</span> Scan...';
+        scanButton.disabled = true;
+
+        // Vider la liste actuelle avec animation
+        gsap.to("#wifiList .wifi-item", {
+          opacity: 0,
+          y: -10,
+          stagger: 0.05,
+          duration: 0.2,
+          onComplete: () => {
+            wifiList.innerHTML =
+              '<div class="wifi-item" style="justify-content: center; background: none;"><span class="hourglass">⏳</span> Recherche de réseaux...</div>';
+
+            // Faire la requête
+            fetch("/wifi-scan")
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.status === "success") {
+                  // Vider la liste de chargement
+                  wifiList.innerHTML = "";
+
+                  // Récupérer le statut pour marquer le réseau connecté
+                  fetch("/wifi-status")
+                    .then((res) => res.json())
+                    .then((statusData) => {
+                      const connectedSsid = statusData.connected
+                        ? statusData.ssid
+                        : null;
+
+                      // Ajouter chaque réseau à la liste
+                      data.networks.forEach((network, index) => {
+                        const isConnected = network.ssid === connectedSsid;
+                        const networkItem = document.createElement("div");
+                        networkItem.className = `wifi-item ${
+                          isConnected ? "connected" : ""
+                        }`;
+                        networkItem.style.opacity = 0;
+                        networkItem.style.transform = "translateY(10px)";
+
+                        // Déterminer l'icône de sécurité
+                        let securityIcon = "";
+                        if (network.security && network.security !== "--") {
+                          securityIcon =
+                            '<i class="fas fa-lock" style="font-size: 0.8em; margin-left: 5px;"></i>';
+                        }
+
+                        // Calculer les barres de signal (0-100%)
+                        const signalStrength = parseInt(network.signal);
+                        const signalBars = [];
+                        for (let i = 0; i < 4; i++) {
+                          const threshold = i * 25;
+                          const height =
+                            signalStrength > threshold
+                              ? Math.min(100, (signalStrength - threshold) * 4)
+                              : 0;
+
+                          signalBars.push(`
+                            <div class="signal-bar">
+                              <div class="signal-fill" style="height: ${height}%"></div>
+                            </div>
+                          `);
+                        }
+
+                        networkItem.innerHTML = `
+                          <div class="wifi-name">
+                            <div class="wifi-icon">
+                              <i class="fas ${
+                                isConnected ? "fa-wifi" : "fa-wifi"
+                              }"></i>
+                            </div>
+                            <div>
+                              <div class="wifi-ssid">${
+                                network.ssid
+                              }${securityIcon}</div>
+                              <div class="wifi-security">${
+                                isConnected ? "Connecté" : ""
+                              }</div>
+                            </div>
+                          </div>
+                          <div class="wifi-signal">
+                            ${signalBars.join("")}
+                          </div>
+                        `;
+
+                        // Ajouter l'événement de clic
+                        networkItem.onclick = function () {
+                          showConnectModal(network.ssid);
+                        };
+
+                        wifiList.appendChild(networkItem);
+
+                        // Animation d'entrée
+                        gsap.to(networkItem, {
+                          opacity: 1,
+                          y: 0,
+                          duration: 0.3,
+                          delay: index * 0.05,
+                          ease: "power1.out",
+                        });
+                      });
+
+                      if (data.networks.length === 0) {
+                        wifiList.innerHTML =
+                          '<div class="wifi-item" style="justify-content: center; background: none;">Aucun réseau trouvé</div>';
+                      }
+                    })
+                    .catch((err) => {
+                      console.error(
+                        "Erreur lors de la vérification du statut:",
+                        err
+                      );
+                      showPopup(
+                        "Erreur lors de la vérification du statut",
+                        false
+                      );
+                    });
+                } else {
+                  wifiList.innerHTML =
+                    '<div class="wifi-item" style="justify-content: center; background: none;">Erreur lors du scan</div>';
+                  showPopup("Erreur lors du scan des réseaux", false);
+                }
+              })
+              .catch((err) => {
+                console.error("Erreur lors du scan:", err);
+                wifiList.innerHTML =
+                  '<div class="wifi-item" style="justify-content: center; background: none;">Erreur de connexion</div>';
+                showPopup("Erreur de connexion au serveur", false);
+              })
+              .finally(() => {
+                // Rétablir le bouton
+                scanButton.innerHTML = '<i class="fas fa-search"></i> Scanner';
+                scanButton.disabled = false;
+              });
+          },
+        });
+      }
+
+      // Afficher le modal de connexion
+      function showConnectModal(ssid) {
+        selectedNetwork = ssid;
+        document.getElementById("modalSsid").textContent = ssid;
+        document.getElementById("wifiPassword").value = "";
+
+        const overlay = document.getElementById("connectModal");
+        const modal = document.getElementById("modalContent");
+
+        overlay.style.display = "flex";
+        setTimeout(() => {
+          modal.classList.add("active");
+        }, 10);
+      }
+
+      // Cacher le modal de connexion
+      function hideConnectModal() {
+        const overlay = document.getElementById("connectModal");
+        const modal = document.getElementById("modalContent");
+
+        modal.classList.remove("active");
+        setTimeout(() => {
+          overlay.style.display = "none";
+        }, 300);
+      }
+
+      // Se connecter au réseau
+      function connectToNetwork() {
+        if (!selectedNetwork) return;
+
+        const password = document.getElementById("wifiPassword").value;
+        const connectButtons = document.querySelectorAll("#modalContent .btn");
+
+        // Désactiver les boutons pendant la connexion
+        connectButtons.forEach((btn) => {
+          btn.disabled = true;
+          if (btn.classList.contains("primary")) {
+            btn.innerHTML = '<span class="hourglass">⏳</span> Connexion...';
+          }
+        });
+
+        fetch("/wifi-connect", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ssid: selectedNetwork,
+            password: password,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            hideConnectModal();
+
+            if (data.status === "success") {
+              showPopup(data.message, true);
+
+              // Mettre à jour le statut et l'IP après un court délai
+              setTimeout(() => {
+                checkWifiStatus();
+                getIpAddress();
+                scanNetworks();
+              }, 2000);
+            } else {
+              showPopup(data.message, false);
+            }
+          })
+          .catch((err) => {
+            console.error("Erreur lors de la connexion:", err);
+            hideConnectModal();
+            showPopup("Erreur de connexion au serveur", false);
+          })
+          .finally(() => {
+            // Réactiver les boutons
+            connectButtons.forEach((btn) => {
+              btn.disabled = false;
+              if (btn.classList.contains("primary")) {
+                btn.innerHTML = '<i class="fas fa-check"></i> Connecter';
+              }
+            });
+          });
+      }
+
+      // Déconnecter le WiFi
+      function disconnectWifi() {
+        const disconnectButton = document.getElementById("disconnectButton");
+
+        // Afficher l'animation de chargement
+        const originalText = disconnectButton.innerHTML;
+        disconnectButton.innerHTML =
+          '<span class="hourglass">⏳</span> Déconnexion...';
+        disconnectButton.disabled = true;
+
+        fetch("/wifi-disconnect", {
+          method: "POST",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "success") {
+              showPopup(data.message, true);
+
+              // Mettre à jour le statut et l'IP après un court délai
+              setTimeout(() => {
+                checkWifiStatus();
+                getIpAddress();
+                scanNetworks();
+              }, 2000);
+            } else {
+              showPopup(data.message, false);
+            }
+          })
+          .catch((err) => {
+            console.error("Erreur lors de la déconnexion:", err);
+            showPopup("Erreur de déconnexion", false);
+          })
+          .finally(() => {
+            // Rétablir le bouton
+            disconnectButton.innerHTML = originalText;
+            disconnectButton.disabled = false;
+          });
+      }
+
+      // Afficher un popup
+      function showPopup(msg, success = true) {
+        const popup = document.getElementById("popup");
+
+        // Préfixer avec l'icône appropriée
+        const iconHTML = success
+          ? `<i class="fas fa-check-circle"></i> `
+          : `<i class="fas fa-exclamation-triangle"></i> `;
+
+        popup.innerHTML = iconHTML + msg;
+        popup.className = success ? "" : "popup-error";
+        popup.style.display = "block";
+
+        gsap.fromTo(
+          popup,
+          { y: 100, opacity: 0, scale: 0.8 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }
+        );
+
+        setTimeout(() => {
+          gsap.to(popup, {
+            y: 100,
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.4,
+            ease: "back.in(1.7)",
+            onComplete: () => (popup.style.display = "none"),
+          });
+        }, 3500);
+      }
+
+      // Initialisation
+      document.addEventListener("DOMContentLoaded", function () {
+        createParticles();
+        getIpAddress();
+        checkWifiStatus();
+        scanNetworks();
+
+        // Rafraîchir régulièrement l'IP et le statut WiFi
+        setInterval(() => {
+          getIpAddress();
+          checkWifiStatus();
+        }, 30000); // Toutes les 30 secondes
+      });
+    </script>
+    <script src="/static/touch-animations.js"></script>
+  </body>
+</html>

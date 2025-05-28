@@ -1,0 +1,16 @@
+[Unit]
+Description=LoRa Control Pro Web Interface
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/lorareplay
+ExecStart=/usr/bin/python3 /home/pi/lorareplay/server.py
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=lorareplay
+
+[Install]
+WantedBy=multi-user.target

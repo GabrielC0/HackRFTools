@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoRa Sender Pro</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="/static/touch-effects.css" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #0f0c29, #24243e, #313862);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        color: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Particules d'arrière-plan */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .particle {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+          opacity: 0.3;
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+          opacity: 1;
+        }
+      }
+
+      /* Menu Paramètres */
+      .settings-button {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        color: white;
+        font-size: 1.2em;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .settings-button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(90deg) scale(1.1);
+      }
+
+      .settings-menu {
+        position: fixed;
+        top: 90px;
+        right: 30px;
+        width: 300px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        padding: 20px;
+        z-index: 999;
+        transform: translateX(100%) scale(0.8);
+        opacity: 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      }
+
+      .settings-menu.active {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+      }
+
+      .settings-item {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .settings-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      .settings-label {
+        font-size: 0.9em;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 8px;
+      }
+
+      .status-display {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+      }
+
+      .status-connected {
+        color: #2ecc71;
+      }
+
+      .status-disconnected {
+        color: #e74c3c;
+      }
+
+      .status-checking {
+        color: #f39c12;
+      }
+
+      .hourglass-small {
+        display: inline-block;
+        font-size: 1em;
+        animation: rotate 1.5s linear infinite;
+        width: 1em;
+        height: 1em;
+        line-height: 1em;
+      }
+
+      .counter-display {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: #667eea;
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .settings-btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 12px;
+        font-size: 0.9em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-bottom: 10px;
+      }
+
+      .reset-btn {
+        background: linear-gradient(135deg, #f39c12, #e67e22);
+        color: white;
+      }
+
+      .reset-btn:hover {
+        background: linear-gradient(135deg, #e67e22, #d35400);
+        transform: translateY(-2px);
+      }
+
+      .shutdown-btn {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: white;
+      }
+
+      .shutdown-btn:hover {
+        background: linear-gradient(135deg, #c0392b, #a93226);
+        transform: translateY(-2px);
+      }
+
+      /* Popup de confirmation personnalisé */
+      .confirmation-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .confirmation-popup {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 400px;
+        width: 90%;
+        text-align: center;
+        transform: scale(0.8);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .confirmation-popup.active {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .confirmation-icon {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      .confirmation-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .confirmation-message {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 25px;
+        line-height: 1.5;
+      }
+
+      .confirmation-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .confirm-btn,
+      .cancel-btn {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 100px;
+      }
+
+      .confirm-btn {
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: white;
+      }
+
+      .confirm-btn:hover {
+        background: linear-gradient(135deg, #c0392b, #a93226);
+        transform: translateY(-2px);
+      }
+
+      .cancel-btn {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .cancel-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 30px;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 10;
+        transform: translateY(20px);
+        opacity: 0;
+        margin-bottom: 10px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .title {
+        font-size: 2.8em;
+        font-weight: 700;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 10px;
+        text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+      }
+
+      .subtitle {
+        font-size: 1.1em;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 300;
+      }
+
+      .connection-status-indicator {
+        position: fixed;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.9em;
+        padding: 8px 15px;
+        background: rgba(0, 0, 0, 0.3);
+        display: inline-block;
+        border-radius: 20px;
+        z-index: 999;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        min-width: 180px;
+        text-align: center;
+      }
+
+      .status-connected {
+        color: #2ecc71;
+        font-weight: 600;
+      }
+
+      .status-disconnected {
+        color: #e74c3c;
+        font-weight: 600;
+      }
+
+      .control-section {
+        margin-bottom: 30px;
+      }
+
+      .control-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .control-label i {
+        color: #667eea;
+        font-size: 1.3em;
+      }
+
+      .select-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+      }
+
+      select {
+        width: 100%;
+        font-size: 1.1em;
+        padding: 16px 20px;
+        border-radius: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.9);
+        color: #333333;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        appearance: none;
+        cursor: pointer;
+        font-weight: 500;
+      }
+
+      select option {
+        background: #ffffff;
+        color: #333333;
+        padding: 10px;
+      }
+
+      select:hover {
+        border-color: rgba(102, 126, 234, 0.5);
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(-2px);
+      }
+
+      select:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .select-wrapper::after {
+        content: "\f107";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666666;
+        pointer-events: none;
+      }
+
+      .file-buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.2),
+          rgba(118, 75, 162, 0.2)
+        );
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 18px 20px;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .btn:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.4),
+          rgba(118, 75, 162, 0.4)
+        );
+        border-color: rgba(102, 126, 234, 0.6);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+      }
+
+      .btn:hover::before {
+        left: 100%;
+      }
+
+      .btn:active {
+        transform: translateY(-1px) scale(0.98);
+      }
+
+      .btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none !important;
+      }
+
+      .hourglass {
+        display: inline-block;
+        font-size: 1.2em;
+        animation: rotate 2s linear infinite;
+        width: 1.2em;
+        height: 1.2em;
+        line-height: 1.2em;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      #popup {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%) translateY(100px);
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        color: white;
+        padding: 20px 30px;
+        border-radius: 16px;
+        font-size: 1em;
+        font-weight: 600;
+        display: none;
+        z-index: 1000;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        min-width: 250px;
+        text-align: center;
+        max-width: 80%;
+      }
+
+      #popup br {
+        margin-top: 5px;
+      }
+
+      .popup-error {
+        background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
+      }
+
+      @media (max-width: 768px) {
+        .settings-button {
+          top: 20px;
+          right: 20px;
+          width: 45px;
+          height: 45px;
+        }
+
+        .connection-status-indicator {
+          top: 10px;
+          padding: 4px 12px;
+          font-size: 0.8em;
+        }
+
+        .settings-menu {
+          top: 75px;
+          right: 20px;
+          width: calc(100vw - 40px);
+          max-width: 280px;
+        }
+
+        .container {
+          padding: 30px 20px;
+          margin: 10px;
+        }
+
+        .title {
+          font-size: 2.2em;
+        }
+
+        .file-buttons {
+          grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+          gap: 12px;
+        }
+
+        .btn {
+          padding: 15px 16px;
+          font-size: 1em;
+          min-height: 55px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .title {
+          font-size: 1.8em;
+        }
+
+        .file-buttons {
+          grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <!-- Indicateur de connexion HackRF (en haut au centre) -->
+    <div class="connection-status-indicator" id="mainConnectionStatus">
+      <span class="status-disconnected"
+        ><i class="fas fa-signal"></i> Vérification...</span
+      >
+    </div>
+
+    <!-- Badge d'adresse IP -->
+    <div
+      class="ip-badge"
+      id="ipBadge"
+      style="
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        padding: 8px 15px;
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+      "
+    >
+      <i
+        class="fas fa-network-wired"
+        style="margin-right: 8px; color: #66e0ff"
+      ></i>
+      <span id="ipAddress">Chargement...</span>
+    </div>
+
+    <!-- Navigation bar -->
+    <div
+      class="navbar"
+      style="
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        padding: 10px;
+        z-index: 1000;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      "
+    >
+      <a
+        href="/"
+        class="nav-btn active"
+        style="
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.25);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 5px;
+          font-size: 22px;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        "
+      >
+        <i class="fas fa-satellite-dish"></i>
+      </a>
+      <a
+        href="/wifi.html"
+        class="nav-btn"
+        style="
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 5px;
+          font-size: 22px;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        "
+      >
+        <i class="fas fa-wifi"></i>
+      </a>
+      <div
+        class="nav-btn"
+        onclick="window.location.reload()"
+        style="
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 5px;
+          font-size: 22px;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        "
+      >
+        <i class="fas fa-sync-alt"></i>
+      </div>
+      <div
+        class="nav-btn"
+        onclick="showExitKioskModal()"
+        style="
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 5px;
+          font-size: 22px;
+          color: white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        "
+        title="Quitter le mode kiosque"
+      >
+        <i class="fas fa-sign-out-alt"></i>
+      </div>
+    </div>
+
+    <!-- Bouton Paramètres -->
+    <button class="settings-button" onclick="toggleSettings()">
+      <i class="fas fa-cog"></i>
+    </button>
+
+    <!-- Menu Paramètres -->
+    <div class="settings-menu" id="settingsMenu">
+      <div class="settings-item">
+        <div class="settings-label">Compteur de clics</div>
+        <div class="counter-display" id="clickCounter">0</div>
+      </div>
+
+      <div class="settings-item">
+        <button
+          class="settings-btn reset-btn"
+          onclick="showConfirmation('reset')"
+        >
+          <i class="fas fa-undo"></i> Reset
+        </button>
+        <button
+          class="settings-btn shutdown-btn"
+          onclick="showConfirmation('shutdown')"
+        >
+          <i class="fas fa-power-off"></i> Éteindre
+        </button>
+      </div>
+    </div>
+
+    <!-- Popup de confirmation -->
+    <div class="confirmation-overlay" id="confirmationOverlay">
+      <div class="confirmation-popup" id="confirmationPopup">
+        <div class="confirmation-icon" id="confirmationIcon"></div>
+        <div class="confirmation-title" id="confirmationTitle"></div>
+        <div class="confirmation-message" id="confirmationMessage"></div>
+        <div class="confirmation-buttons">
+          <button class="confirm-btn" id="confirmBtn">Confirmer</button>
+          <button class="cancel-btn" onclick="hideConfirmation()">
+            Annuler
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de sortie du mode kiosque -->
+    <div
+      class="modal-overlay"
+      id="exitKioskModal"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+      "
+    >
+      <div
+        class="modal"
+        id="exitModalContent"
+        style="
+          background: rgba(30, 30, 30, 0.95);
+          border-radius: 20px;
+          padding: 30px;
+          width: 90%;
+          max-width: 400px;
+          transform: scale(0.8);
+          opacity: 0;
+          transition: all 0.3s ease;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        "
+      >
+        <div
+          class="modal-header"
+          style="text-align: center; margin-bottom: 20px"
+        >
+          <div
+            class="modal-title"
+            style="font-size: 1.5em; font-weight: 600; margin-bottom: 5px"
+          >
+            Quitter le mode kiosque
+          </div>
+          <div
+            class="modal-subtitle"
+            style="color: rgba(255, 255, 255, 0.7); font-size: 0.9em"
+          >
+            Choisissez une option
+          </div>
+        </div>
+
+        <div style="margin-bottom: 20px">
+          <div style="text-align: center; margin-bottom: 20px">
+            <i
+              class="fas fa-sign-out-alt"
+              style="font-size: 3em; color: #ff9f43"
+            ></i>
+          </div>
+          <p style="margin-bottom: 20px; text-align: center">
+            Que souhaitez-vous faire ?
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 15px">
+          <button
+            class="btn primary"
+            onclick="exitKioskMode()"
+            style="
+              flex: 1;
+              padding: 15px;
+              border: none;
+              border-radius: 16px;
+              background: linear-gradient(135deg, #66e0ff, #83a4d4);
+              color: white;
+              font-weight: 600;
+              font-size: 1em;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <i class="fas fa-desktop" style="margin-right: 8px"></i> Retour au
+            bureau
+          </button>
+          <button
+            class="btn"
+            onclick="restartSystem()"
+            style="
+              flex: 1;
+              padding: 15px;
+              border: none;
+              border-radius: 16px;
+              background: linear-gradient(135deg, #ff9f43, #ff7700);
+              color: white;
+              font-weight: 600;
+              font-size: 1em;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <i class="fas fa-sync-alt" style="margin-right: 8px"></i> Redémarrer
+          </button>
+          <button
+            class="btn"
+            onclick="shutdownSystem()"
+            style="
+              flex: 1;
+              padding: 15px;
+              border: none;
+              border-radius: 16px;
+              background: linear-gradient(135deg, #ee5253, #c0392b);
+              color: white;
+              font-weight: 600;
+              font-size: 1em;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <i class="fas fa-power-off" style="margin-right: 8px"></i> Éteindre
+          </button>
+          <button
+            class="btn"
+            onclick="hideExitKioskModal()"
+            style="
+              flex: 1;
+              padding: 15px;
+              border: none;
+              border-radius: 16px;
+              background: rgba(255, 255, 255, 0.1);
+              color: white;
+              font-weight: 600;
+              font-size: 1em;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <i class="fas fa-times" style="margin-right: 8px"></i> Annuler
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="mainContainer">
+      <div class="header">
+        <h1 class="title">
+          <i class="fas fa-satellite-dish"></i>
+          LoRa Control Pro
+        </h1>
+        <p class="subtitle">Interface de contrôle HackRF avancée</p>
+      </div>
+
+      <div class="control-section">
+        <label class="control-label" for="folder">
+          <i class="fas fa-folder-open"></i>
+          Sélectionner un dossier
+        </label>
+        <div class="select-wrapper">
+          <select id="folder" onchange="loadFiles()">
+            {% for folder in folders %}
+            <option value="{{ folder }}">{{ folder }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div class="control-section">
+        <label class="control-label">
+          <i class="fas fa-radio"></i>
+          Signaux disponibles
+        </label>
+        <div class="file-buttons" id="fileButtons">
+          <!-- Les boutons seront générés dynamiquement -->
+        </div>
+      </div>
+    </div>
+
+    <div id="popup"></div>
+
+    <script>
+      let clickCount = 0;
+      let settingsOpen = false;
+      let checkHackRFInterval; // Variable pour stocker l'intervalle de vérification
+
+      // Animation d'entrée
+      gsap.to("#mainContainer", {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+
+      // Création des particules
+      function createParticles() {
+        const particlesContainer = document.getElementById("particles");
+        for (let i = 0; i < 50; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.top = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 6 + "s";
+          particle.style.animationDuration = Math.random() * 3 + 3 + "s";
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      // Récupérer l'adresse IP
+      function getIpAddress() {
+        fetch("/get-ip")
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "success") {
+              const ipInfo = data.ip_info;
+              let ipDisplay = "";
+
+              // Priorité à wlan0, puis eth0, puis default
+              if (ipInfo.wlan0) {
+                ipDisplay = `WiFi: ${ipInfo.wlan0}`;
+              } else if (ipInfo.eth0) {
+                ipDisplay = `Ethernet: ${ipInfo.eth0}`;
+              } else if (ipInfo.default) {
+                ipDisplay = ipInfo.default;
+              } else {
+                ipDisplay = "Non connecté";
+              }
+
+              document.getElementById("ipAddress").textContent = ipDisplay;
+            } else {
+              document.getElementById("ipAddress").textContent =
+                "Non disponible";
+            }
+          })
+          .catch((err) => {
+            console.error("Erreur lors de la récupération de l'IP:", err);
+            document.getElementById("ipAddress").textContent = "Erreur";
+          });
+      }
+
+      // Gestion du menu paramètres
+      function toggleSettings() {
+        const menu = document.getElementById("settingsMenu");
+        settingsOpen = !settingsOpen;
+
+        if (settingsOpen) {
+          menu.classList.add("active");
+          // Simuler la vérification du statut HackRF
+          checkHackRFStatus();
+        } else {
+          menu.classList.remove("active");
+        }
+      }
+
+      // Fermer le menu si on clique ailleurs
+      document.addEventListener("click", function (event) {
+        const settingsButton = document.querySelector(".settings-button");
+        const settingsMenu = document.getElementById("settingsMenu");
+
+        if (
+          !settingsButton.contains(event.target) &&
+          !settingsMenu.contains(event.target)
+        ) {
+          settingsMenu.classList.remove("active");
+          settingsOpen = false;
+        }
+      });
+
+      // Vérification du statut HackRF
+      function checkHackRFStatus() {
+        const mainStatusElement = document.getElementById(
+          "mainConnectionStatus"
+        );
+
+        // Ne pas montrer d'état intermédiaire de vérification
+        fetch("/hackrf-status")
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "connected") {
+              // Afficher seulement l'état connecté
+              mainStatusElement.innerHTML =
+                '<span class="status-connected"><i class="fas fa-signal"></i> HackRF connecté</span>';
+
+              // Stocker l'horodatage de la dernière vérification réussie
+              const lastConnectTime = new Date();
+              mainStatusElement.setAttribute(
+                "data-last-connect",
+                lastConnectTime.getTime()
+              );
+            } else {
+              // Afficher seulement l'état déconnecté
+              mainStatusElement.innerHTML =
+                '<span class="status-disconnected"><i class="fas fa-exclamation-triangle"></i> HackRF non connecté</span>';
+            }
+          })
+          .catch(() => {
+            // En cas d'erreur, afficher comme déconnecté
+            mainStatusElement.innerHTML =
+              '<span class="status-disconnected"><i class="fas fa-exclamation-circle"></i> HackRF non connecté</span>';
+          });
+      }
+
+      // Mise à jour du compteur
+      function updateClickCounter() {
+        fetch("/click-count")
+          .then((res) => res.json())
+          .then((data) => {
+            clickCount = data.count;
+            document.getElementById("clickCounter").textContent = clickCount;
+          })
+          .catch((err) => {
+            console.error("Erreur lors de la mise à jour du compteur:", err);
+          });
+      }
+
+      // Popup de confirmation
+      function showConfirmation(type) {
+        const overlay = document.getElementById("confirmationOverlay");
+        const popup = document.getElementById("confirmationPopup");
+        const icon = document.getElementById("confirmationIcon");
+        const title = document.getElementById("confirmationTitle");
+        const message = document.getElementById("confirmationMessage");
+        const confirmBtn = document.getElementById("confirmBtn");
+
+        if (type === "reset") {
+          icon.innerHTML = "🔄";
+          title.textContent = "Confirmer le Reset";
+          message.textContent =
+            "Êtes-vous sûr de vouloir remettre le compteur à zéro ?";
+          confirmBtn.onclick = () => {
+            resetCounter();
+            hideConfirmation();
+          };
+        } else if (type === "shutdown") {
+          icon.innerHTML = "⚠️";
+          title.textContent = "Confirmer l'arrêt";
+          message.textContent =
+            "Êtes-vous sûr de vouloir éteindre le système ? Cette action ne peut pas être annulée.";
+          confirmBtn.onclick = () => {
+            shutdown();
+            hideConfirmation();
+          };
+        }
+
+        overlay.style.display = "flex";
+        setTimeout(() => {
+          popup.classList.add("active");
+        }, 10);
+      }
+
+      function hideConfirmation() {
+        const overlay = document.getElementById("confirmationOverlay");
+        const popup = document.getElementById("confirmationPopup");
+
+        popup.classList.remove("active");
+        setTimeout(() => {
+          overlay.style.display = "none";
+        }, 300);
+      }
+
+      // Actions des boutons
+      function resetCounter() {
+        const resetBtn = document.querySelector(".reset-btn");
+        const originalText = resetBtn.innerHTML;
+        resetBtn.innerHTML =
+          '<span class="hourglass" style="display:inline-block;width:1.2em;height:1.2em;">⏳</span> Reset';
+        resetBtn.disabled = true;
+        fetch("/reset-count", { method: "POST" })
+          .then((res) => res.json())
+          .then((data) => {
+            clickCount = 0;
+            document.getElementById("clickCounter").textContent = clickCount;
+            showPopup(
+              data.message || "Compteur remis à zéro",
+              data.status === "success"
+            );
+          })
+          .catch(() => {
+            showPopup("Erreur lors du reset", false);
+          })
+          .finally(() => {
+            resetBtn.innerHTML = originalText;
+            resetBtn.disabled = false;
+          });
+      }
+
+      function shutdown() {
+        const shutdownBtn = document.querySelector(".shutdown-btn");
+        const originalText = shutdownBtn.innerHTML;
+        shutdownBtn.innerHTML =
+          '<span class="hourglass" style="display:inline-block;width:1.2em;height:1.2em;">⏳</span> Éteindre';
+        shutdownBtn.disabled = true;
+        fetch("/shutdown", { method: "POST" })
+          .then((res) => res.json())
+          .then((data) => {
+            showPopup(
+              data.message || "Arrêt du système en cours...",
+              data.status === "success"
+            );
+          })
+          .catch(() => {
+            showPopup("Erreur lors de l'arrêt", false);
+          })
+          .finally(() => {
+            shutdownBtn.innerHTML = originalText;
+            shutdownBtn.disabled = false;
+          });
+      }
+
+      const popup = document.getElementById("popup");
+
+      function showPopup(msg, success = true) {
+        // Préfixer avec l'icône appropriée
+        const iconHTML = success
+          ? `<i class="fas fa-check-circle"></i> `
+          : `<i class="fas fa-exclamation-triangle"></i> `;
+
+        // Le message peut contenir du HTML (pour les détails)
+        popup.innerHTML = iconHTML + msg;
+
+        popup.className = success ? "" : "popup-error";
+        popup.style.display = "block";
+
+        gsap.fromTo(
+          popup,
+          { y: 100, opacity: 0, scale: 0.8 },
+          { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }
+        );
+
+        // Durée plus longue si le message contient des détails
+        const displayDuration = msg.includes("<br>") ? 5000 : 3500;
+
+        setTimeout(() => {
+          gsap.to(popup, {
+            y: 100,
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.4,
+            ease: "back.in(1.7)",
+            onComplete: () => (popup.style.display = "none"),
+          });
+        }, displayDuration);
+      }
+
+      function showLoading(button) {
+        const originalText = button.innerHTML;
+        button.innerHTML =
+          '<span class="hourglass" style="display:inline-block;width:1.2em;height:1.2em;">⏳</span>';
+        button.disabled = true;
+        return originalText;
+      }
+
+      function hideLoading(button, originalText) {
+        button.innerHTML = originalText;
+        button.disabled = false;
+      }
+
+      function loadFiles() {
+        const folder = document.getElementById("folder").value;
+        const container = document.getElementById("fileButtons");
+
+        // Animation de sortie des anciens boutons
+        gsap.to(container.children, {
+          scale: 0,
+          opacity: 0,
+          duration: 0.3,
+          stagger: 0.05,
+          onComplete: () => {
+            fetch(`/files?folder=${folder}`)
+              .then((res) => res.json())
+              .then((data) => {
+                container.innerHTML = "";
+                data.forEach((file, index) => {
+                  const letter = file.split(".")[0];
+                  const btn = document.createElement("button");
+                  btn.textContent = letter;
+                  btn.className = "btn";
+                  btn.onclick = () => sendFile(folder, letter, btn);
+                  btn.style.opacity = "0";
+                  btn.style.transform = "scale(0.8)";
+                  container.appendChild(btn);
+
+                  // Animation d'entrée des nouveaux boutons
+                  gsap.to(btn, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.4,
+                    delay: index * 0.1,
+                    ease: "back.out(1.7)",
+                  });
+                });
+              })
+              .catch((err) => {
+                showPopup("Erreur lors du chargement des fichiers", false);
+              });
+          },
+        });
+      }
+
+      function sendFile(folder, letter, button) {
+        const originalText = showLoading(button);
+
+        // Vérifier d'abord si le HackRF est connecté
+        fetch("/hackrf-status")
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "connected") {
+              // Si le HackRF est connecté, procéder à l'envoi
+              fetch(`/send?folder=${folder}&letter=${letter}`)
+                .then((res) => res.json())
+                .then((data) => {
+                  hideLoading(button, originalText);
+
+                  // Simplifier le message de confirmation d'envoi
+                  if (data.status === "success") {
+                    showPopup("✅ Signal envoyé avec succès", true);
+                    updateClickCounter();
+
+                    // Animation de succès sur le bouton
+                    gsap.to(button, {
+                      scale: 1.1,
+                      duration: 0.2,
+                      yoyo: true,
+                      repeat: 1,
+                      ease: "power2.inOut",
+                    });
+                  } else {
+                    showPopup(data.message || "Erreur lors de l'envoi", false);
+                  }
+                })
+                .catch((err) => {
+                  hideLoading(button, originalText);
+                  showPopup("Erreur lors de l'envoi", false);
+                });
+            } else {
+              // Si le HackRF n'est pas connecté, afficher une erreur
+              hideLoading(button, originalText);
+              showPopup(
+                "HackRF non détecté. Veuillez vérifier la connexion.",
+                false
+              );
+            }
+          })
+          .catch((err) => {
+            hideLoading(button, originalText);
+            showPopup("Erreur lors de la vérification du HackRF", false);
+          });
+      }
+
+      // Initialisation
+      createParticles();
+      loadFiles();
+      loadClickCount();
+      checkHackRFStatus(); // Vérifier le statut HackRF au démarrage
+      startPeriodicHackRFCheck(); // Démarrer la vérification périodique
+      getIpAddress(); // Récupérer l'adresse IP
+
+      // Rafraîchir régulièrement l'adresse IP
+      setInterval(() => {
+        getIpAddress();
+      }, 30000); // Toutes les 30 secondes
+
+      // Fonction pour démarrer la vérification périodique du HackRF
+      function startPeriodicHackRFCheck() {
+        // Nettoyer l'ancien intervalle s'il existe
+        if (checkHackRFInterval) {
+          clearInterval(checkHackRFInterval);
+        }
+
+        // Créer un nouvel intervalle qui vérifie toutes les 3 secondes
+        checkHackRFInterval = setInterval(function () {
+          checkHackRFStatus();
+        }, 3000); // 3000 ms = 3 secondes
+      }
+
+      // Chargement du compteur au démarrage
+      function loadClickCount() {
+        fetch("/click-count")
+          .then((res) => res.json())
+          .then((data) => {
+            clickCount = data.count;
+            document.getElementById("clickCounter").textContent = clickCount;
+          })
+          .catch((err) => {
+            console.error("Erreur lors du chargement du compteur:", err);
+          });
+      }
+
+      // Animation continue du gradient
+      gsap.to("body", {
+        backgroundPosition: "200% 50%",
+        duration: 20,
+        ease: "none",
+        repeat: -1,
+      });
+
+      // Arrêter la vérification périodique lorsque l'utilisateur quitte la page
+      window.addEventListener("beforeunload", function () {
+        if (checkHackRFInterval) {
+          clearInterval(checkHackRFInterval);
+        }
+      });
+    </script>
+    <script src="/static/touch-animations.js"></script>
+  </body>
+</html>
