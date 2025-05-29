@@ -60,6 +60,35 @@ def read_signal_params(txt_file_path):
         print(f"Erreur lors de la lecture des paramètres: {e}")
         return default_params
 
+def get_wifi_status():
+    try:
+        # Vérifier si l'interface wlan0 est connectée
+        result = subprocess.run(['iwgetid', 'wlan0', '-r'], capture_output=True, text=True)
+        if result.returncode == 0:
+            ssid = result.stdout.strip()
+            # Obtenir l'adresse IP
+            ip_result = subprocess.run(['ip', 'addr', 'show', 'wlan0'], capture_output=True, text=True)
+            ip_match = re.search(r'inet (\d+\.\d+\.\d+\.\d+)', ip_result.stdout)
+            ip = ip_match.group(1) if ip_match else None
+            return {"connected": True, "ssid": ssid, "ip": ip}
+        return {"connected": False, "ssid": None, "ip": None}
+    except Exception as e:
+        return {"connected": False, "ssid": None, "ip": None, "error": str(e)}
+
+def get_current_wifi():
+    """Obtient le réseau WiFi actuellement connecté"""
+    try:
+        result = subprocess.run(['sudo', 'nmcli', '-t', '-f', 'NAME,TYPE', 'connection', 'show', '--active'],
+            capture_output=True,
+            text=True
+        )
+        for line in result.stdout.splitlines():
+            if 'wireless' in line:
+                return line.split(':')[0]
+        return None
+    except Exception:
+        return None
+
 @app.before_request
 def detect_device():
     user_agent = request.headers.get('User-Agent', '').lower()
@@ -232,155 +261,124 @@ def shutdown():
 
 @app.route("/get-ip")
 def get_ip():
-    """Récupère l'adresse IP du Raspberry Pi"""
-    try:
-        # Récupérer les adresses IP
-        ip_info = {}
-        interfaces = ["wlan0", "eth0"]
-        
-        for interface in interfaces:
-            cmd = f"ip addr show {interface} 2>/dev/null | grep 'inet ' | awk '{{print $2}}' | cut -d/ -f1"
-            result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-            ip = result.stdout.strip()
-            if ip:
-                ip_info[interface] = ip
-        
-        # Vérifier si nous avons au moins une adresse IP
-        if not ip_info:
-            # Essayer d'obtenir l'adresse IP de manière alternative
-            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            try:
-                s.connect(("8.8.8.8", 80))
-                ip_info["default"] = s.getsockname()[0]
-            except:
-                ip_info["default"] = "127.0.0.1"
-            finally:
-                s.close()
-        
-        return jsonify({"status": "success", "ip_info": ip_info})
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+    status = get_wifi_status()
+    return jsonify({"ip": status.get("ip")})
 
 @app.route("/wifi-scan")
 def wifi_scan():
     """Scanne les réseaux WiFi disponibles"""
     try:
-        # Utiliser nmcli pour scanner les réseaux WiFi
-        cmd = "nmcli -t -f SSID,SIGNAL,SECURITY device wifi list"
-        result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+        # Force un rescan des réseaux WiFi
+        subprocess.run(['sudo', 'nmcli', 'radio', 'wifi', 'off'], capture_output=True)
+        time.sleep(1)
+        subprocess.run(['sudo', 'nmcli', 'radio', 'wifi', 'on'], capture_output=True)
+        time.sleep(2)
+        subprocess.run(['sudo', 'nmcli', 'device', 'wifi', 'rescan'], capture_output=True)
+        time.sleep(3)  # Augmente le délai d'attente pour le scan
+        
+        # Scan des réseaux
+        result = subprocess.run(['sudo', 'nmcli', '--fields', 'SSID,SIGNAL,SECURITY', '--terse', 'device', 'wifi', 'list'],
+            capture_output=True,
+            text=True
+        )
         
         networks = []
         for line in result.stdout.splitlines():
             if line:
-                parts = line.split(':')
-                if len(parts) >= 3:
-                    ssid = parts[0]
-                    signal = parts[1]
-                    security = parts[2]
-                    
-                    # Éviter les duplicatas (trier par force du signal)
-                    found = False
-                    for net in networks:
-                        if net['ssid'] == ssid:
-                            found = True
-                            if int(signal) > int(net['signal']):
-                                net['signal'] = signal
-                            break
-                    
-                    if not found and ssid:
-                        networks.append({
-                            'ssid': ssid,
-                            'signal': signal,
-                            'security': security
-                        })
+                ssid, signal, security = line.split(':')
+                if ssid and ssid.strip():  # Ignorer les SSID vides
+                    networks.append({
+                        'ssid': ssid,
+                        'signal': int(signal) if signal.isdigit() else 0,
+                        'security': bool(security)
+                    })
         
-        # Trier par force de signal
-        networks.sort(key=lambda x: int(x['signal']), reverse=True)
+        # Trier par force du signal
+        networks.sort(key=lambda x: x['signal'], reverse=True)
         
-        return jsonify({"status": "success", "networks": networks})
+        # Obtenir le réseau actuel
+        current_network = get_current_wifi()
+        return jsonify({'networks': networks, 'current_network': current_network})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+        print("Erreur scan wifi:", str(e))
+        return jsonify({'error': str(e)})
 
 @app.route("/wifi-status")
 def wifi_status():
-    """Récupère le statut actuel de la connexion WiFi"""
-    try:
-        # Vérifier si le WiFi est connecté
-        cmd = "nmcli -t -f NAME,DEVICE connection show --active | grep wlan0"
-        result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-        
-        if result.stdout:
-            # Si connecté, obtenir les détails
-            ssid = result.stdout.split(':')[0]
-            
-            # Récupérer la force du signal
-            cmd = "nmcli -f IN-USE,SIGNAL device wifi | grep '*'"
-            result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-            signal = "0"
-            if result.stdout:
-                match = re.search(r'\*\s+(\d+)', result.stdout)
-                if match:
-                    signal = match.group(1)
-            
-            return jsonify({
-                "status": "success",
-                "connected": True,
-                "ssid": ssid,
-                "signal": signal
-            })
-        else:
-            return jsonify({
-                "status": "success",
-                "connected": False
-            })
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+    status = get_wifi_status()
+    return jsonify(status)
 
-@app.route("/wifi-connect", methods=["POST"])
+@app.route("/connect_wifi", methods=["POST"])
 def wifi_connect():
-    """Connecte le Raspberry Pi à un réseau WiFi"""
     try:
         data = request.get_json()
         ssid = data.get('ssid')
         password = data.get('password')
-        
-        if not ssid:
-            return jsonify({"status": "error", "message": "SSID manquant"})
-        
-        # Créer une nouvelle connexion
-        if password:
-            cmd = f'nmcli device wifi connect "{ssid}" password "{password}"'
+
+        if not ssid or not password:
+            return jsonify({'success': False, 'error': 'SSID et mot de passe requis'})
+
+        # Déconnexion du réseau actuel si nécessaire
+        subprocess.run(['sudo', 'nmcli', 'device', 'disconnect', 'wlan0'], capture_output=True)
+        time.sleep(1)
+
+        # Suppression de l'ancienne connexion si elle existe
+        subprocess.run(['sudo', 'nmcli', 'connection', 'delete', ssid], capture_output=True)
+        time.sleep(1)
+
+        # Tentative de connexion
+        result = subprocess.run(
+            ['sudo', 'nmcli', 'device', 'wifi', 'connect', ssid, 'password', password],
+            capture_output=True,
+            text=True
+        )
+
+        if result.returncode == 0:
+            return jsonify({'success': True})
         else:
-            cmd = f'nmcli device wifi connect "{ssid}"'
-        
-        result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-        
-        if "successfully activated" in result.stdout or "activée avec succès" in result.stdout:
-            return jsonify({"status": "success", "message": f"Connecté à {ssid}"})
-        else:
-            error_msg = result.stderr.strip() or "Échec de connexion"
-            return jsonify({"status": "error", "message": error_msg})
+            print("Erreur connexion wifi:", result.stderr)
+            return jsonify({'success': False, 'error': result.stderr})
+
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+        print("Exception connexion wifi:", str(e))
+        return jsonify({'success': False, 'error': str(e)})
 
 @app.route("/wifi-disconnect", methods=["POST"])
 def wifi_disconnect():
     """Déconnecte le WiFi"""
     try:
-        # Obtenir la connexion active
-        cmd = "nmcli -t -f NAME connection show --active | grep -v 'lo:'"
-        result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+        # Désactiver l'interface wlan0
+        subprocess.run(['sudo', 'ifconfig', 'wlan0', 'down'])
+        time.sleep(1)
+        subprocess.run(['sudo', 'ifconfig', 'wlan0', 'up'])
         
-        if result.stdout:
-            connection_name = result.stdout.strip().split(':')[0]
-            # Déconnecter
-            cmd = f'nmcli connection down "{connection_name}"'
-            subprocess.run(cmd, shell=True)
-            return jsonify({"status": "success", "message": "WiFi déconnecté"})
-        else:
-            return jsonify({"status": "error", "message": "Aucune connexion active"})
+        return jsonify({"success": True})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
+        return jsonify({"success": False, "error": str(e)})
+
+@app.route("/check_wifi_credentials", methods=["POST"])
+def check_wifi_credentials():
+    data = request.get_json()
+    ssid = data.get('ssid')
+    
+    try:
+        with open('wifi_credentials.txt', 'r') as f:
+            for line in f:
+                if line.startswith('//') or not line.strip():
+                    continue
+                stored_ssid, stored_password = line.strip().split(':')
+                if stored_ssid == ssid:
+                    return jsonify({
+                        'hasCredentials': True,
+                        'password': stored_password
+                    })
+    except FileNotFoundError:
+        pass
+    
+    return jsonify({
+        'hasCredentials': False,
+        'password': None
+    })
 
 @app.route("/device-type")
 def device_type():
