@@ -75,7 +75,8 @@
         margin-bottom: 6px;
         display: flex;
         align-items: center;
-        flex-shrink: 0;
+        flex-wrap: wrap;
+        gap: 8px;
       }
 
       .status-icon {
@@ -100,6 +101,17 @@
       .status-text {
         flex: 1;
         font-size: 0.9em;
+      }
+
+      .ip-info {
+        margin-left: auto;
+        font-size: 0.9em;
+        color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 4px 10px;
+        border-radius: 12px;
       }
 
       .wifi-list {
@@ -394,6 +406,13 @@
           <i class="fas fa-wifi"></i>
         </div>
         <div class="status-text">Chargement...</div>
+        <div class="ip-info">
+          <i
+            class="fas fa-network-wired"
+            style="margin-right: 5px; opacity: 0.7"
+          ></i>
+          <span id="ipAddress">Chargement...</span>
+        </div>
       </div>
 
       <div class="wifi-list" id="wifiList"></div>
@@ -435,6 +454,37 @@
             console.error("Erreur:", error);
             statusText.textContent = "Erreur de connexion";
             statusIcon.className = "fas fa-exclamation-circle";
+          });
+      }
+
+      // Fonction pour récupérer l'adresse IP
+      function getIpAddress() {
+        fetch("/get-ip")
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.status === "success") {
+              const ipInfo = data.ip_info;
+              let ipDisplay = "";
+
+              if (ipInfo.wlan0) {
+                ipDisplay = ipInfo.wlan0;
+              } else if (ipInfo.eth0) {
+                ipDisplay = ipInfo.eth0;
+              } else if (ipInfo.default) {
+                ipDisplay = ipInfo.default;
+              } else {
+                ipDisplay = "Non connecté";
+              }
+
+              document.getElementById("ipAddress").textContent = ipDisplay;
+            } else {
+              document.getElementById("ipAddress").textContent =
+                "Non disponible";
+            }
+          })
+          .catch((err) => {
+            console.error("Erreur IP:", err);
+            document.getElementById("ipAddress").textContent = "Erreur";
           });
       }
 
@@ -568,9 +618,11 @@
       // Initialisation et actualisation périodique
       handleRefresh();
       updateConnectionStatus();
+      getIpAddress();
 
       // Actualiser le statut toutes les 5 secondes
       setInterval(updateConnectionStatus, 5000);
+      setInterval(getIpAddress, 30000); // Mise à jour toutes les 30 secondes
     </script>
   </body>
 </html>

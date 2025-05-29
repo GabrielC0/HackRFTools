@@ -1,10 +1,22 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, make_response, send_from_directory
 import subprocess
 import os
 import time
 import socket
 import re
 import json
+import logging
+
+# Configuration du logging
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler('/home/pi/lorareplay/server.log')
+    ]
+)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__, static_folder='static')
 BASE_PATH = "/home/pi/lorareplay/signals/frequences"
@@ -119,9 +131,21 @@ def detect_device():
     else:
         request.is_mobile = False
 
+@app.before_request
+def log_request_info():
+    logger.debug('Headers: %s', request.headers)
+    logger.debug('Body: %s', request.get_data())
+
+@app.after_request
+def log_response_info(response):
+    logger.debug('Response: %s', response.get_data())
+    return response
+
 @app.route("/")
 def index():
-    return render_template("index.html", folders=get_folders())
+    response = make_response(render_template("index.html", folders=get_folders()))
+    response.headers['Content-Type'] = 'text/html; charset=utf-8'
+    return response
 
 @app.route("/wifi.html")
 def wifi():
@@ -283,8 +307,48 @@ def shutdown():
 
 @app.route("/get-ip")
 def get_ip():
-    status = get_wifi_status()
-    return jsonify({"ip": status.get("ip")})
+    try:
+        # Obtenir toutes les adresses IP
+        ip_info = {}
+        
+        # Récupérer l'IP de wlan0 (WiFi)
+        try:
+            output = subprocess.check_output(['ip', 'addr', 'show', 'wlan0']).decode()
+            ip = re.search(r'inet (\d+\.\d+\.\d+\.\d+)', output)
+            if ip:
+                ip_info['wlan0'] = ip.group(1)
+        except:
+            pass
+
+        # Récupérer l'IP de eth0 (Ethernet)
+        try:
+            output = subprocess.check_output(['ip', 'addr', 'show', 'eth0']).decode()
+            ip = re.search(r'inet (\d+\.\d+\.\d+\.\d+)', output)
+            if ip:
+                ip_info['eth0'] = ip.group(1)
+        except:
+            pass
+
+        # Si aucune IP n'est trouvée, obtenir l'IP par défaut
+        if not ip_info:
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            try:
+                s.connect(('8.8.8.8', 80))
+                ip_info['default'] = s.getsockname()[0]
+            except:
+                pass
+            finally:
+                s.close()
+
+        return jsonify({
+            "status": "success",
+            "ip_info": ip_info
+        })
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+        })
 
 @app.route("/wifi-scan")
 def wifi_scan():
@@ -438,6 +502,13 @@ def device_type():
     else:
         return jsonify({'device': 'desktop'})
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'icon.svg', mimetype='image/svg+xml')
+
+@app.route('/static/<path:path>')
+def send_static(path):
+    return send_from_directory('static', path)
+
 if __name__ == "__main__":
-    print("🌐 Serveur en ligne : http://<IP_RPI>:5000")
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)

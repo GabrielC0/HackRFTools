@@ -1,0 +1,16 @@
+[Unit]
+Description=WiFi Monitor for LoRa Control Pro
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/home/pi/lorareplay
+ExecStart=/bin/bash /home/pi/lorareplay/wifi_monitor.sh
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=wifi-monitor
+
+[Install]
+WantedBy=multi-user.target
