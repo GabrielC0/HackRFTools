@@ -10043,3 +10043,1185 @@ Accept-Language: en-US,en;q=0.9
 2025-05-29 15:55:16,956 - __main__ - DEBUG - Body: b''
 2025-05-29 15:55:16,963 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
 2025-05-29 15:55:16,964 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:55:16] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:55:19,317 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:19,318 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:19,325 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526919\n}\n'
+2025-05-29 15:55:19,326 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:19] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:21,965 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:55:21,968 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:21,967 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:55:21,973 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:21,989 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:55:21,990 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:55:21] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:55:21,993 - __main__ - DEBUG - Response: b'{\n  "ip_info": {\n    "wlan0": "192.168.0.32"\n  },\n  "status": "success"\n}\n'
+2025-05-29 15:55:21,994 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:55:21] "GET /get-ip HTTP/1.1" 200 -
+2025-05-29 15:55:22,377 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:22,377 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:22,386 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526922\n}\n'
+2025-05-29 15:55:22,387 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:22] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:25,037 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:25,038 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:25,068 - __main__ - DEBUG - Response: b'<!DOCTYPE html>\n<html lang="fr">\n  <head>\n    <meta charset="UTF-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n    <title>LoRa Sender Pro</title>\n    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>\n    <link\n      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"\n      rel="stylesheet"\n    />\n    <link href="/static/touch-effects.css" rel="stylesheet" />\n    <style>\n      * {\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n      }\n\n      body {\n        font-family: "Inter", "Segoe UI", sans-serif;\n        background: linear-gradient(135deg, #0f0c29, #24243e, #313862);\n        background-size: 400% 400%;\n        animation: gradientShift 15s ease infinite;\n        color: #ffffff;\n        min-height: 100vh;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        padding: 5px;\n        position: relative;\n        overflow-x: hidden;\n        overflow-y: hidden;\n      }\n\n      @keyframes gradientShift {\n        0% {\n          background-position: 0% 50%;\n        }\n        50% {\n          background-position: 100% 50%;\n        }\n        100% {\n          background-position: 0% 50%;\n        }\n      }\n\n      /* Particules d\'arri\xc3\xa8re-plan */\n      .particles {\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        pointer-events: none;\n        z-index: 1;\n      }\n\n      .particle {\n        position: absolute;\n        width: 2px;\n        height: 2px;\n        background: rgba(255, 255, 255, 0.3);\n        border-radius: 50%;\n        animation: float 6s ease-in-out infinite;\n      }\n\n      @keyframes float {\n        0%,\n        100% {\n          transform: translateY(0px) rotate(0deg);\n          opacity: 0.3;\n        }\n        50% {\n          transform: translateY(-20px) rotate(180deg);\n          opacity: 1;\n        }\n      }\n\n      /* Menu Param\xc3\xa8tres */\n      .settings-button {\n        position: fixed;\n        top: 30px;\n        right: 30px;\n        width: 50px;\n        height: 50px;\n        background: rgba(255, 255, 255, 0.1);\n        border: 2px solid rgba(255, 255, 255, 0.2);\n        border-radius: 50%;\n        color: white;\n        font-size: 1.2em;\n        cursor: pointer;\n        backdrop-filter: blur(10px);\n        transition: all 0.3s ease;\n        z-index: 1000;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n\n      .settings-button:hover {\n        background: rgba(255, 255, 255, 0.2);\n        transform: rotate(90deg) scale(1.1);\n      }\n\n      .settings-menu {\n        position: fixed;\n        top: 90px;\n        right: 30px;\n        width: 300px;\n        background: rgba(255, 255, 255, 0.1);\n        backdrop-filter: blur(20px);\n        border: 1px solid rgba(255, 255, 255, 0.2);\n        border-radius: 16px;\n        padding: 20px;\n        z-index: 999;\n        transform: translateX(100%) scale(0.8);\n        opacity: 0;\n        transition: all 0.3s ease;\n        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);\n      }\n\n      .settings-menu.active {\n        transform: translateX(0) scale(1);\n        opacity: 1;\n      }\n\n      .settings-item {\n        margin-bottom: 20px;\n        padding-bottom: 15px;\n        border-bottom: 1px solid rgba(255, 255, 255, 0.1);\n      }\n\n      .settings-item:last-child {\n        border-bottom: none;\n        margin-bottom: 0;\n      }\n\n      .settings-label {\n        font-size: 0.9em;\n        color: rgba(255, 255, 255, 0.7);\n        margin-bottom: 8px;\n      }\n\n      .status-display {\n        display: flex;\n        align-items: center;\n        gap: 8px;\n        font-weight: 600;\n      }\n\n      .status-connected {\n        color: #2ecc71;\n      }\n\n      .status-disconnected {\n        color: #e74c3c;\n      }\n\n      .status-checking {\n        color: #f39c12;\n      }\n\n      .hourglass-small {\n        display: inline-block;\n        font-size: 1em;\n        animation: rotate 1.5s linear infinite;\n        width: 1em;\n        height: 1em;\n        line-height: 1em;\n      }\n\n      .counter-display {\n        font-size: 1.5em;\n        font-weight: 700;\n        color: #667eea;\n        text-align: center;\n        margin: 10px 0;\n      }\n\n      .settings-btn {\n        width: 100%;\n        padding: 12px;\n        border: none;\n        border-radius: 12px;\n        font-size: 0.9em;\n        font-weight: 600;\n        cursor: pointer;\n        transition: all 0.3s ease;\n        margin-bottom: 10px;\n      }\n\n      .reset-btn {\n        background: linear-gradient(135deg, #f39c12, #e67e22);\n        color: white;\n      }\n\n      .reset-btn:hover {\n        background: linear-gradient(135deg, #e67e22, #d35400);\n        transform: translateY(-2px);\n      }\n\n      .shutdown-btn {\n        background: linear-gradient(135deg, #e74c3c, #c0392b);\n        color: white;\n      }\n\n      .shutdown-btn:hover {\n        background: linear-gradient(135deg, #c0392b, #a93226);\n        transform: translateY(-2px);\n      }\n\n      /* Popup de confirmation personnalis\xc3\xa9 */\n      .confirmation-overlay {\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        background: rgba(0, 0, 0, 0.7);\n        backdrop-filter: blur(5px);\n        z-index: 2000;\n        display: none;\n        align-items: center;\n        justify-content: center;\n      }\n\n      .confirmation-popup {\n        background: rgba(255, 255, 255, 0.1);\n        backdrop-filter: blur(20px);\n        border: 1px solid rgba(255, 255, 255, 0.2);\n        border-radius: 20px;\n        padding: 30px;\n        max-width: 400px;\n        width: 90%;\n        text-align: center;\n        transform: scale(0.8);\n        opacity: 0;\n        transition: all 0.3s ease;\n      }\n\n      .confirmation-popup.active {\n        transform: scale(1);\n        opacity: 1;\n      }\n\n      .confirmation-icon {\n        font-size: 3em;\n        margin-bottom: 20px;\n      }\n\n      .confirmation-title {\n        font-size: 1.3em;\n        font-weight: 700;\n        margin-bottom: 15px;\n      }\n\n      .confirmation-message {\n        color: rgba(255, 255, 255, 0.8);\n        margin-bottom: 25px;\n        line-height: 1.5;\n      }\n\n      .confirmation-buttons {\n        display: flex;\n        gap: 15px;\n        justify-content: center;\n      }\n\n      .confirm-btn,\n      .cancel-btn {\n        padding: 12px 25px;\n        border: none;\n        border-radius: 12px;\n        font-weight: 600;\n        cursor: pointer;\n        transition: all 0.3s ease;\n        min-width: 100px;\n      }\n\n      .confirm-btn {\n        background: linear-gradient(135deg, #e74c3c, #c0392b);\n        color: white;\n      }\n\n      .confirm-btn:hover {\n        background: linear-gradient(135deg, #c0392b, #a93226);\n        transform: translateY(-2px);\n      }\n\n      .cancel-btn {\n        background: rgba(255, 255, 255, 0.1);\n        color: white;\n        border: 1px solid rgba(255, 255, 255, 0.3);\n      }\n\n      .cancel-btn:hover {\n        background: rgba(255, 255, 255, 0.2);\n        transform: translateY(-2px);\n      }\n\n      .container {\n        background: rgba(255, 255, 255, 0.05);\n        backdrop-filter: blur(20px);\n        border: 1px solid rgba(255, 255, 255, 0.1);\n        border-radius: 24px;\n        padding: 30px;\n        max-width: 600px;\n        width: 100%;\n        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);\n        position: relative;\n        z-index: 10;\n        transform: translateY(20px);\n        opacity: 0;\n        margin-bottom: 10px;\n      }\n\n      .header {\n        text-align: center;\n        margin-bottom: 40px;\n      }\n\n      .title {\n        font-size: 2.8em;\n        font-weight: 700;\n        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n        -webkit-background-clip: text;\n        -webkit-text-fill-color: transparent;\n        background-clip: text;\n        margin-bottom: 10px;\n        text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);\n      }\n\n      .subtitle {\n        font-size: 1.1em;\n        color: rgba(255, 255, 255, 0.7);\n        font-weight: 300;\n      }\n\n      .connection-status-indicator {\n        position: fixed;\n        top: 15px;\n        left: 50%;\n        transform: translateX(-50%);\n        font-size: 0.9em;\n        padding: 8px 15px;\n        background: rgba(0, 0, 0, 0.3);\n        display: inline-block;\n        border-radius: 20px;\n        z-index: 999;\n        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);\n        min-width: 180px;\n        text-align: center;\n      }\n\n      .status-connected {\n        color: #2ecc71;\n        font-weight: 600;\n      }\n\n      .status-disconnected {\n        color: #e74c3c;\n        font-weight: 600;\n      }\n\n      .control-section {\n        margin-bottom: 30px;\n      }\n\n      .control-label {\n        display: flex;\n        align-items: center;\n        gap: 10px;\n        font-size: 1.2em;\n        font-weight: 600;\n        margin-bottom: 15px;\n        color: rgba(255, 255, 255, 0.9);\n      }\n\n      .control-label i {\n        color: #667eea;\n        font-size: 1.3em;\n      }\n\n      .select-wrapper {\n        position: relative;\n        margin-bottom: 20px;\n      }\n\n      select {\n        width: 100%;\n        font-size: 1.1em;\n        padding: 16px 20px;\n        border-radius: 16px;\n        border: 2px solid rgba(255, 255, 255, 0.1);\n        background: rgba(255, 255, 255, 0.9);\n        color: #333333;\n        backdrop-filter: blur(10px);\n        transition: all 0.3s ease;\n        appearance: none;\n        cursor: pointer;\n        font-weight: 500;\n      }\n\n      select option {\n        background: #ffffff;\n        color: #333333;\n        padding: 10px;\n      }\n\n      select:hover {\n        border-color: rgba(102, 126, 234, 0.5);\n        background: rgba(255, 255, 255, 0.95);\n        transform: translateY(-2px);\n      }\n\n      select:focus {\n        outline: none;\n        border-color: #667eea;\n        box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);\n      }\n\n      .select-wrapper::after {\n        content: "\\f107";\n        font-family: "Font Awesome 6 Free";\n        font-weight: 900;\n        position: absolute;\n        right: 20px;\n        top: 50%;\n        transform: translateY(-50%);\n        color: #666666;\n        pointer-events: none;\n      }\n\n      .file-buttons {\n        display: grid;\n        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));\n        gap: 15px;\n        margin-top: 30px;\n      }\n\n      .btn {\n        background: linear-gradient(\n          135deg,\n          rgba(102, 126, 234, 0.2),\n          rgba(118, 75, 162, 0.2)\n        );\n        color: #ffffff;\n        border: 2px solid rgba(255, 255, 255, 0.1);\n        border-radius: 16px;\n        padding: 18px 20px;\n        font-size: 1.1em;\n        font-weight: 600;\n        cursor: pointer;\n        backdrop-filter: blur(10px);\n        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n        position: relative;\n        overflow: hidden;\n        min-height: 60px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n\n      .btn::before {\n        content: "";\n        position: absolute;\n        top: 0;\n        left: -100%;\n        width: 100%;\n        height: 100%;\n        background: linear-gradient(\n          90deg,\n          transparent,\n          rgba(255, 255, 255, 0.2),\n          transparent\n        );\n        transition: left 0.5s;\n      }\n\n      .btn:hover {\n        background: linear-gradient(\n          135deg,\n          rgba(102, 126, 234, 0.4),\n          rgba(118, 75, 162, 0.4)\n        );\n        border-color: rgba(102, 126, 234, 0.6);\n        transform: translateY(-3px) scale(1.02);\n        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);\n      }\n\n      .btn:hover::before {\n        left: 100%;\n      }\n\n      .btn:active {\n        transform: translateY(-1px) scale(0.98);\n      }\n\n      .btn:disabled {\n        opacity: 0.7;\n        cursor: not-allowed;\n        transform: none !important;\n      }\n\n      .hourglass {\n        display: inline-block;\n        font-size: 1.2em;\n        animation: rotate 2s linear infinite;\n        width: 1.2em;\n        height: 1.2em;\n        line-height: 1.2em;\n      }\n\n      @keyframes rotate {\n        from {\n          transform: rotate(0deg);\n        }\n        to {\n          transform: rotate(360deg);\n        }\n      }\n\n      #popup {\n        position: fixed;\n        bottom: 30px;\n        left: 50%;\n        transform: translateX(-50%) translateY(100px);\n        background: linear-gradient(135deg, #2ecc71, #27ae60);\n        color: white;\n        padding: 20px 30px;\n        border-radius: 16px;\n        font-size: 1em;\n        font-weight: 600;\n        display: none;\n        z-index: 1000;\n        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);\n        backdrop-filter: blur(10px);\n        border: 1px solid rgba(255, 255, 255, 0.1);\n        min-width: 250px;\n        text-align: center;\n        max-width: 80%;\n      }\n\n      #popup br {\n        margin-top: 5px;\n      }\n\n      .popup-error {\n        background: linear-gradient(135deg, #e74c3c, #c0392b) !important;\n      }\n\n      @media (max-width: 768px) {\n        .settings-button {\n          top: 20px;\n          right: 20px;\n          width: 45px;\n          height: 45px;\n        }\n\n        .connection-status-indicator {\n          top: 10px;\n          padding: 4px 12px;\n          font-size: 0.8em;\n        }\n\n        .settings-menu {\n          top: 75px;\n          right: 20px;\n          width: calc(100vw - 40px);\n          max-width: 280px;\n        }\n\n        .container {\n          padding: 30px 20px;\n          margin: 10px;\n        }\n\n        .title {\n          font-size: 2.2em;\n        }\n\n        .file-buttons {\n          grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));\n          gap: 12px;\n        }\n\n        .btn {\n          padding: 15px 16px;\n          font-size: 1em;\n          min-height: 55px;\n        }\n      }\n\n      @media (max-width: 480px) {\n        .title {\n          font-size: 1.8em;\n        }\n\n        .file-buttons {\n          grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));\n          gap: 10px;\n        }\n      }\n    </style>\n  </head>\n  <body>\n    <div class="particles" id="particles"></div>\n\n    <!-- Indicateur de connexion HackRF (en haut au centre) -->\n    <div class="connection-status-indicator" id="mainConnectionStatus">\n      <span class="status-disconnected"\n        ><i class="fas fa-signal"></i> V\xc3\xa9rification...</span\n      >\n    </div>\n\n    <!-- Badge d\'adresse IP -->\n    <div\n      class="ip-badge"\n      id="ipBadge"\n      style="\n        position: fixed;\n        top: 15px;\n        left: 15px;\n        background: rgba(0, 0, 0, 0.3);\n        border-radius: 20px;\n        padding: 8px 15px;\n        font-size: 0.9em;\n        display: flex;\n        align-items: center;\n        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\n        backdrop-filter: blur(10px);\n      "\n    >\n      <i\n        class="fas fa-network-wired"\n        style="margin-right: 8px; color: #66e0ff"\n      ></i>\n      <span id="ipAddress">Chargement...</span>\n    </div>\n\n    <!-- Navigation bar -->\n    <div\n      class="navbar"\n      style="\n        position: fixed;\n        bottom: 20px;\n        left: 50%;\n        transform: translateX(-50%);\n        display: flex;\n        background: rgba(255, 255, 255, 0.1);\n        backdrop-filter: blur(10px);\n        border-radius: 30px;\n        padding: 10px;\n        z-index: 1000;\n        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);\n        border: 1px solid rgba(255, 255, 255, 0.1);\n      "\n    >\n      <a\n        href="/"\n        class="nav-btn active"\n        style="\n          width: 60px;\n          height: 60px;\n          border-radius: 50%;\n          background: rgba(255, 255, 255, 0.25);\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          margin: 0 5px;\n          font-size: 22px;\n          color: white;\n          cursor: pointer;\n          transition: all 0.3s ease;\n        "\n      >\n        <i class="fas fa-satellite-dish"></i>\n      </a>\n      <a\n        href="/wifi.html"\n        class="nav-btn"\n        style="\n          width: 60px;\n          height: 60px;\n          border-radius: 50%;\n          background: rgba(255, 255, 255, 0.1);\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          margin: 0 5px;\n          font-size: 22px;\n          color: white;\n          cursor: pointer;\n          transition: all 0.3s ease;\n        "\n      >\n        <i class="fas fa-wifi"></i>\n      </a>\n      <div\n        class="nav-btn"\n        onclick="window.location.reload()"\n        style="\n          width: 60px;\n          height: 60px;\n          border-radius: 50%;\n          background: rgba(255, 255, 255, 0.1);\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          margin: 0 5px;\n          font-size: 22px;\n          color: white;\n          cursor: pointer;\n          transition: all 0.3s ease;\n        "\n      >\n        <i class="fas fa-sync-alt"></i>\n      </div>\n      <div\n        class="nav-btn"\n        onclick="showExitKioskModal()"\n        style="\n          width: 60px;\n          height: 60px;\n          border-radius: 50%;\n          background: rgba(255, 255, 255, 0.1);\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          margin: 0 5px;\n          font-size: 22px;\n          color: white;\n          cursor: pointer;\n          transition: all 0.3s ease;\n        "\n        title="Quitter le mode kiosque"\n      >\n        <i class="fas fa-sign-out-alt"></i>\n      </div>\n    </div>\n\n    <!-- Bouton Param\xc3\xa8tres -->\n    <button class="settings-button" onclick="toggleSettings()">\n      <i class="fas fa-cog"></i>\n    </button>\n\n    <!-- Menu Param\xc3\xa8tres -->\n    <div class="settings-menu" id="settingsMenu">\n      <div class="settings-item">\n        <div class="settings-label">Compteur de clics</div>\n        <div class="counter-display" id="clickCounter">0</div>\n      </div>\n\n      <div class="settings-item">\n        <button\n          class="settings-btn reset-btn"\n          onclick="showConfirmation(\'reset\')"\n        >\n          <i class="fas fa-undo"></i> Reset\n        </button>\n        <button\n          class="settings-btn shutdown-btn"\n          onclick="showConfirmation(\'shutdown\')"\n        >\n          <i class="fas fa-power-off"></i> \xc3\x89teindre\n        </button>\n      </div>\n    </div>\n\n    <!-- Popup de confirmation -->\n    <div class="confirmation-overlay" id="confirmationOverlay">\n      <div class="confirmation-popup" id="confirmationPopup">\n        <div class="confirmation-icon" id="confirmationIcon"></div>\n        <div class="confirmation-title" id="confirmationTitle"></div>\n        <div class="confirmation-message" id="confirmationMessage"></div>\n        <div class="confirmation-buttons">\n          <button class="confirm-btn" id="confirmBtn">Confirmer</button>\n          <button class="cancel-btn" onclick="hideConfirmation()">\n            Annuler\n          </button>\n        </div>\n      </div>\n    </div>\n\n    <!-- Modal de sortie du mode kiosque -->\n    <div\n      class="modal-overlay"\n      id="exitKioskModal"\n      style="\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        background: rgba(0, 0, 0, 0.5);\n        backdrop-filter: blur(5px);\n        display: none;\n        align-items: center;\n        justify-content: center;\n        z-index: 100;\n      "\n    >\n      <div\n        class="modal"\n        id="exitModalContent"\n        style="\n          background: rgba(30, 30, 30, 0.95);\n          border-radius: 20px;\n          padding: 30px;\n          width: 90%;\n          max-width: 400px;\n          transform: scale(0.8);\n          opacity: 0;\n          transition: all 0.3s ease;\n          border: 1px solid rgba(255, 255, 255, 0.1);\n        "\n      >\n        <div\n          class="modal-header"\n          style="text-align: center; margin-bottom: 20px"\n        >\n          <div\n            class="modal-title"\n            style="font-size: 1.5em; font-weight: 600; margin-bottom: 5px"\n          >\n            Quitter le mode kiosque\n          </div>\n          <div\n            class="modal-subtitle"\n            style="color: rgba(255, 255, 255, 0.7); font-size: 0.9em"\n          >\n            Choisissez une option\n          </div>\n        </div>\n\n        <div style="margin-bottom: 20px">\n          <div style="text-align: center; margin-bottom: 20px">\n            <i\n              class="fas fa-sign-out-alt"\n              style="font-size: 3em; color: #ff9f43"\n            ></i>\n          </div>\n          <p style="margin-bottom: 20px; text-align: center">\n            Que souhaitez-vous faire ?\n          </p>\n        </div>\n\n        <div style="display: flex; flex-direction: column; gap: 15px">\n          <button\n            class="btn primary"\n            onclick="exitKioskMode()"\n            style="\n              flex: 1;\n              padding: 15px;\n              border: none;\n              border-radius: 16px;\n              background: linear-gradient(135deg, #66e0ff, #83a4d4);\n              color: white;\n              font-weight: 600;\n              font-size: 1em;\n              cursor: pointer;\n              transition: all 0.3s ease;\n              display: flex;\n              align-items: center;\n              justify-content: center;\n            "\n          >\n            <i class="fas fa-desktop" style="margin-right: 8px"></i> Retour au\n            bureau\n          </button>\n          <button\n            class="btn"\n            onclick="restartSystem()"\n            style="\n              flex: 1;\n              padding: 15px;\n              border: none;\n              border-radius: 16px;\n              background: linear-gradient(135deg, #ff9f43, #ff7700);\n              color: white;\n              font-weight: 600;\n              font-size: 1em;\n              cursor: pointer;\n              transition: all 0.3s ease;\n              display: flex;\n              align-items: center;\n              justify-content: center;\n            "\n          >\n            <i class="fas fa-sync-alt" style="margin-right: 8px"></i> Red\xc3\xa9marrer\n          </button>\n          <button\n            class="btn"\n            onclick="shutdownSystem()"\n            style="\n              flex: 1;\n              padding: 15px;\n              border: none;\n              border-radius: 16px;\n              background: linear-gradient(135deg, #ee5253, #c0392b);\n              color: white;\n              font-weight: 600;\n              font-size: 1em;\n              cursor: pointer;\n              transition: all 0.3s ease;\n              display: flex;\n              align-items: center;\n              justify-content: center;\n            "\n          >\n            <i class="fas fa-power-off" style="margin-right: 8px"></i> \xc3\x89teindre\n          </button>\n          <button\n            class="btn"\n            onclick="hideExitKioskModal()"\n            style="\n              flex: 1;\n              padding: 15px;\n              border: none;\n              border-radius: 16px;\n              background: rgba(255, 255, 255, 0.1);\n              color: white;\n              font-weight: 600;\n              font-size: 1em;\n              cursor: pointer;\n              transition: all 0.3s ease;\n              display: flex;\n              align-items: center;\n              justify-content: center;\n            "\n          >\n            <i class="fas fa-times" style="margin-right: 8px"></i> Annuler\n          </button>\n        </div>\n      </div>\n    </div>\n\n    <div class="container" id="mainContainer">\n      <div class="header">\n        <h1 class="title">\n          <i class="fas fa-satellite-dish"></i>\n          LoRa Control Pro\n        </h1>\n        <p class="subtitle">Interface de contr\xc3\xb4le HackRF avanc\xc3\xa9e</p>\n      </div>\n\n      <div class="control-section">\n        <label class="control-label" for="folder">\n          <i class="fas fa-folder-open"></i>\n          S\xc3\xa9lectionner un dossier\n        </label>\n        <div class="select-wrapper">\n          <select id="folder" onchange="loadFiles()">\n            \n            <option value="1">1</option>\n            \n            <option value="2">2</option>\n            \n            <option value="3">3</option>\n            \n            <option value="4">4</option>\n            \n            <option value="5">5</option>\n            \n            <option value="6">6</option>\n            \n            <option value="7">7</option>\n            \n            <option value="8">8</option>\n            \n            <option value="11">11</option>\n            \n            <option value="12">12</option>\n            \n            <option value="13">13</option>\n            \n          </select>\n        </div>\n      </div>\n\n      <div class="control-section">\n        <label class="control-label">\n          <i class="fas fa-radio"></i>\n          Signaux disponibles\n        </label>\n        <div class="file-buttons" id="fileButtons">\n          <!-- Les boutons seront g\xc3\xa9n\xc3\xa9r\xc3\xa9s dynamiquement -->\n        </div>\n      </div>\n    </div>\n\n    <div id="popup"></div>\n\n    <script>\n      let clickCount = 0;\n      let settingsOpen = false;\n      let checkHackRFInterval; // Variable pour stocker l\'intervalle de v\xc3\xa9rification\n\n      // Animation d\'entr\xc3\xa9e\n      gsap.to("#mainContainer", {\n        y: 0,\n        opacity: 1,\n        duration: 1,\n        ease: "power3.out",\n        delay: 0.2,\n      });\n\n      // Cr\xc3\xa9ation des particules\n      function createParticles() {\n        const particlesContainer = document.getElementById("particles");\n        for (let i = 0; i < 50; i++) {\n          const particle = document.createElement("div");\n          particle.className = "particle";\n          particle.style.left = Math.random() * 100 + "%";\n          particle.style.top = Math.random() * 100 + "%";\n          particle.style.animationDelay = Math.random() * 6 + "s";\n          particle.style.animationDuration = Math.random() * 3 + 3 + "s";\n          particlesContainer.appendChild(particle);\n        }\n      }\n\n      // R\xc3\xa9cup\xc3\xa9rer l\'adresse IP\n      function getIpAddress() {\n        fetch("/get-ip")\n          .then((res) => res.json())\n          .then((data) => {\n            if (data.status === "success") {\n              const ipInfo = data.ip_info;\n              let ipDisplay = "";\n\n              // Priorit\xc3\xa9 \xc3\xa0 wlan0, puis eth0, puis default\n              if (ipInfo.wlan0) {\n                ipDisplay = `WiFi: ${ipInfo.wlan0}`;\n              } else if (ipInfo.eth0) {\n                ipDisplay = `Ethernet: ${ipInfo.eth0}`;\n              } else if (ipInfo.default) {\n                ipDisplay = ipInfo.default;\n              } else {\n                ipDisplay = "Non connect\xc3\xa9";\n              }\n\n              document.getElementById("ipAddress").textContent = ipDisplay;\n            } else {\n              document.getElementById("ipAddress").textContent =\n                "Non disponible";\n            }\n          })\n          .catch((err) => {\n            console.error("Erreur lors de la r\xc3\xa9cup\xc3\xa9ration de l\'IP:", err);\n            document.getElementById("ipAddress").textContent = "Erreur";\n          });\n      }\n\n      // Gestion du menu param\xc3\xa8tres\n      function toggleSettings() {\n        const menu = document.getElementById("settingsMenu");\n        settingsOpen = !settingsOpen;\n\n        if (settingsOpen) {\n          menu.classList.add("active");\n          // Simuler la v\xc3\xa9rification du statut HackRF\n          checkHackRFStatus();\n        } else {\n          menu.classList.remove("active");\n        }\n      }\n\n      // Fermer le menu si on clique ailleurs\n      document.addEventListener("click", function (event) {\n        const settingsButton = document.querySelector(".settings-button");\n        const settingsMenu = document.getElementById("settingsMenu");\n\n        if (\n          !settingsButton.contains(event.target) &&\n          !settingsMenu.contains(event.target)\n        ) {\n          settingsMenu.classList.remove("active");\n          settingsOpen = false;\n        }\n      });\n\n      // V\xc3\xa9rification du statut HackRF\n      function checkHackRFStatus() {\n        const mainStatusElement = document.getElementById(\n          "mainConnectionStatus"\n        );\n\n        // Ne pas montrer d\'\xc3\xa9tat interm\xc3\xa9diaire de v\xc3\xa9rification\n        fetch("/hackrf-status")\n          .then((res) => res.json())\n          .then((data) => {\n            if (data.status === "connected") {\n              // Afficher seulement l\'\xc3\xa9tat connect\xc3\xa9\n              mainStatusElement.innerHTML =\n                \'<span class="status-connected"><i class="fas fa-signal"></i> HackRF connect\xc3\xa9</span>\';\n\n              // Stocker l\'horodatage de la derni\xc3\xa8re v\xc3\xa9rification r\xc3\xa9ussie\n              const lastConnectTime = new Date();\n              mainStatusElement.setAttribute(\n                "data-last-connect",\n                lastConnectTime.getTime()\n              );\n            } else {\n              // Afficher seulement l\'\xc3\xa9tat d\xc3\xa9connect\xc3\xa9\n              mainStatusElement.innerHTML =\n                \'<span class="status-disconnected"><i class="fas fa-exclamation-triangle"></i> HackRF non connect\xc3\xa9</span>\';\n            }\n          })\n          .catch(() => {\n            // En cas d\'erreur, afficher comme d\xc3\xa9connect\xc3\xa9\n            mainStatusElement.innerHTML =\n              \'<span class="status-disconnected"><i class="fas fa-exclamation-circle"></i> HackRF non connect\xc3\xa9</span>\';\n          });\n      }\n\n      // Mise \xc3\xa0 jour du compteur\n      function updateClickCounter() {\n        fetch("/click-count")\n          .then((res) => res.json())\n          .then((data) => {\n            clickCount = data.count;\n            document.getElementById("clickCounter").textContent = clickCount;\n          })\n          .catch((err) => {\n            console.error("Erreur lors de la mise \xc3\xa0 jour du compteur:", err);\n          });\n      }\n\n      // Popup de confirmation\n      function showConfirmation(type) {\n        const overlay = document.getElementById("confirmationOverlay");\n        const popup = document.getElementById("confirmationPopup");\n        const icon = document.getElementById("confirmationIcon");\n        const title = document.getElementById("confirmationTitle");\n        const message = document.getElementById("confirmationMessage");\n        const confirmBtn = document.getElementById("confirmBtn");\n\n        if (type === "reset") {\n          icon.innerHTML = "\xf0\x9f\x94\x84";\n          title.textContent = "Confirmer le Reset";\n          message.textContent =\n            "\xc3\x8ates-vous s\xc3\xbbr de vouloir remettre le compteur \xc3\xa0 z\xc3\xa9ro ?";\n          confirmBtn.onclick = () => {\n            resetCounter();\n            hideConfirmation();\n          };\n        } else if (type === "shutdown") {\n          icon.innerHTML = "\xe2\x9a\xa0\xef\xb8\x8f";\n          title.textContent = "Confirmer l\'arr\xc3\xaat";\n          message.textContent =\n            "\xc3\x8ates-vous s\xc3\xbbr de vouloir \xc3\xa9teindre le syst\xc3\xa8me ? Cette action ne peut pas \xc3\xaatre annul\xc3\xa9e.";\n          confirmBtn.onclick = () => {\n            shutdown();\n            hideConfirmation();\n          };\n        }\n\n        overlay.style.display = "flex";\n        setTimeout(() => {\n          popup.classList.add("active");\n        }, 10);\n      }\n\n      function hideConfirmation() {\n        const overlay = document.getElementById("confirmationOverlay");\n        const popup = document.getElementById("confirmationPopup");\n\n        popup.classList.remove("active");\n        setTimeout(() => {\n          overlay.style.display = "none";\n        }, 300);\n      }\n\n      // Actions des boutons\n      function resetCounter() {\n        const resetBtn = document.querySelector(".reset-btn");\n        const originalText = resetBtn.innerHTML;\n        resetBtn.innerHTML =\n          \'<span class="hourglass" style="display:inline-block;width:1.2em;height:1.2em;">\xe2\x8f\xb3</span> Reset\';\n        resetBtn.disabled = true;\n        fetch("/reset-count", { method: "POST" })\n          .then((res) => res.json())\n          .then((data) => {\n            clickCount = 0;\n            document.getElementById("clickCounter").textContent = clickCount;\n            showPopup(\n              data.message || "Compteur remis \xc3\xa0 z\xc3\xa9ro",\n              data.status === "success"\n            );\n          })\n          .catch(() => {\n            showPopup("Erreur lors du reset", false);\n          })\n          .finally(() => {\n            resetBtn.innerHTML = originalText;\n            resetBtn.disabled = false;\n          });\n      }\n\n      function shutdown() {\n        const shutdownBtn = document.querySelector(".shutdown-btn");\n        const originalText = shutdownBtn.innerHTML;\n        shutdownBtn.innerHTML =\n          \'<span class="hourglass" style="display:inline-block;width:1.2em;height:1.2em;">\xe2\x8f\xb3</span> \xc3\x89teindre\';\n        shutdownBtn.disabled = true;\n        fetch("/shutdown", { method: "POST" })\n          .then((res) => res.json())\n          .then((data) => {\n            showPopup(\n              data.message || "Arr\xc3\xaat du syst\xc3\xa8me en cours...",\n              data.status === "success"\n            );\n          })\n          .catch(() => {\n            showPopup("Erreur lors de l\'arr\xc3\xaat", false);\n          })\n          .finally(() => {\n            shutdownBtn.innerHTML = originalText;\n            shutdownBtn.disabled = false;\n          });\n      }\n\n      const popup = document.getElementById("popup");\n\n      function showPopup(msg, success = true) {\n        // Pr\xc3\xa9fixer avec l\'ic\xc3\xb4ne appropri\xc3\xa9e\n        const iconHTML = success\n          ? `<i class="fas fa-check-circle"></i> `\n          : `<i class="fas fa-exclamation-triangle"></i> `;\n\n        // Le message peut contenir du HTML (pour les d\xc3\xa9tails)\n        popup.innerHTML = iconHTML + msg;\n\n        popup.className = success ? "" : "popup-error";\n        popup.style.display = "block";\n\n        gsap.fromTo(\n          popup,\n          { y: 100, opacity: 0, scale: 0.8 },\n          { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }\n        );\n\n        // Dur\xc3\xa9e plus longue si le message contient des d\xc3\xa9tails\n        const displayDuration = msg.includes("<br>") ? 5000 : 3500;\n\n        setTimeout(() => {\n          gsap.to(popup, {\n            y: 100,\n            opacity: 0,\n            scale: 0.8,\n            duration: 0.4,\n            ease: "back.in(1.7)",\n            onComplete: () => (popup.style.display = "none"),\n          });\n        }, displayDuration);\n      }\n\n      function showLoading(button) {\n        const originalText = button.innerHTML;\n        button.innerHTML =\n          \'<span class="hourglass" style="display:inline-block;width:1.2em;height:1.2em;">\xe2\x8f\xb3</span>\';\n        button.disabled = true;\n        return originalText;\n      }\n\n      function hideLoading(button, originalText) {\n        button.innerHTML = originalText;\n        button.disabled = false;\n      }\n\n      function loadFiles() {\n        const folder = document.getElementById("folder").value;\n        const container = document.getElementById("fileButtons");\n\n        // Animation de sortie des anciens boutons\n        gsap.to(container.children, {\n          scale: 0,\n          opacity: 0,\n          duration: 0.3,\n          stagger: 0.05,\n          onComplete: () => {\n            fetch(`/files?folder=${folder}`)\n              .then((res) => res.json())\n              .then((data) => {\n                container.innerHTML = "";\n                data.forEach((file, index) => {\n                  const letter = file.split(".")[0];\n                  const btn = document.createElement("button");\n                  btn.textContent = letter;\n                  btn.className = "btn";\n                  btn.onclick = () => sendFile(folder, letter, btn);\n                  btn.style.opacity = "0";\n                  btn.style.transform = "scale(0.8)";\n                  container.appendChild(btn);\n\n                  // Animation d\'entr\xc3\xa9e des nouveaux boutons\n                  gsap.to(btn, {\n                    opacity: 1,\n                    scale: 1,\n                    duration: 0.4,\n                    delay: index * 0.1,\n                    ease: "back.out(1.7)",\n                  });\n                });\n              })\n              .catch((err) => {\n                showPopup("Erreur lors du chargement des fichiers", false);\n              });\n          },\n        });\n      }\n\n      function sendFile(folder, letter, button) {\n        const originalText = showLoading(button);\n\n        // V\xc3\xa9rifier d\'abord si le HackRF est connect\xc3\xa9\n        fetch("/hackrf-status")\n          .then((res) => res.json())\n          .then((data) => {\n            if (data.status === "connected") {\n              // Si le HackRF est connect\xc3\xa9, proc\xc3\xa9der \xc3\xa0 l\'envoi\n              fetch(`/send?folder=${folder}&letter=${letter}`)\n                .then((res) => res.json())\n                .then((data) => {\n                  hideLoading(button, originalText);\n\n                  // Simplifier le message de confirmation d\'envoi\n                  if (data.status === "success") {\n                    showPopup("\xe2\x9c\x85 Signal envoy\xc3\xa9 avec succ\xc3\xa8s", true);\n                    updateClickCounter();\n\n                    // Animation de succ\xc3\xa8s sur le bouton\n                    gsap.to(button, {\n                      scale: 1.1,\n                      duration: 0.2,\n                      yoyo: true,\n                      repeat: 1,\n                      ease: "power2.inOut",\n                    });\n                  } else {\n                    showPopup(data.message || "Erreur lors de l\'envoi", false);\n                  }\n                })\n                .catch((err) => {\n                  hideLoading(button, originalText);\n                  showPopup("Erreur lors de l\'envoi", false);\n                });\n            } else {\n              // Si le HackRF n\'est pas connect\xc3\xa9, afficher une erreur\n              hideLoading(button, originalText);\n              showPopup(\n                "HackRF non d\xc3\xa9tect\xc3\xa9. Veuillez v\xc3\xa9rifier la connexion.",\n                false\n              );\n            }\n          })\n          .catch((err) => {\n            hideLoading(button, originalText);\n            showPopup("Erreur lors de la v\xc3\xa9rification du HackRF", false);\n          });\n      }\n\n      // Initialisation\n      createParticles();\n      loadFiles();\n      loadClickCount();\n      checkHackRFStatus(); // V\xc3\xa9rifier le statut HackRF au d\xc3\xa9marrage\n      startPeriodicHackRFCheck(); // D\xc3\xa9marrer la v\xc3\xa9rification p\xc3\xa9riodique\n      getIpAddress(); // R\xc3\xa9cup\xc3\xa9rer l\'adresse IP\n\n      // Rafra\xc3\xaechir r\xc3\xa9guli\xc3\xa8rement l\'adresse IP\n      setInterval(() => {\n        getIpAddress();\n      }, 30000); // Toutes les 30 secondes\n\n      // Fonction pour d\xc3\xa9marrer la v\xc3\xa9rification p\xc3\xa9riodique du HackRF\n      function startPeriodicHackRFCheck() {\n        // Nettoyer l\'ancien intervalle s\'il existe\n        if (checkHackRFInterval) {\n          clearInterval(checkHackRFInterval);\n        }\n\n        // Cr\xc3\xa9er un nouvel intervalle qui v\xc3\xa9rifie toutes les 3 secondes\n        checkHackRFInterval = setInterval(function () {\n          checkHackRFStatus();\n        }, 3000); // 3000 ms = 3 secondes\n      }\n\n      // Chargement du compteur au d\xc3\xa9marrage\n      function loadClickCount() {\n        fetch("/click-count")\n          .then((res) => res.json())\n          .then((data) => {\n            clickCount = data.count;\n            document.getElementById("clickCounter").textContent = clickCount;\n          })\n          .catch((err) => {\n            console.error("Erreur lors du chargement du compteur:", err);\n          });\n      }\n\n      // Animation continue du gradient\n      gsap.to("body", {\n        backgroundPosition: "200% 50%",\n        duration: 20,\n        ease: "none",\n        repeat: -1,\n      });\n\n      // Arr\xc3\xaater la v\xc3\xa9rification p\xc3\xa9riodique lorsque l\'utilisateur quitte la page\n      window.addEventListener("beforeunload", function () {\n        if (checkHackRFInterval) {\n          clearInterval(checkHackRFInterval);\n        }\n      });\n    </script>\n    <script src="/static/touch-animations.js"></script>\n  </body>\n</html>'
+2025-05-29 15:55:25,073 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:25] "GET / HTTP/1.1" 200 -
+2025-05-29 15:55:25,155 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: text/css,*/*;q=0.1
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:25,159 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:25,168 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:25,172 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:25,227 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:25] "[35m[1mGET /static/touch-effects.css HTTP/1.1[0m" 500 -
+2025-05-29 15:55:25,238 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:25] "[35m[1mGET /static/touch-animations.js HTTP/1.1[0m" 500 -
+2025-05-29 15:55:25,482 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:25,484 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:25,485 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:25,487 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:25,489 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:25,488 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:25,491 - __main__ - DEBUG - Response: b'{\n  "count": 0\n}\n'
+2025-05-29 15:55:25,495 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:25] "GET /click-count HTTP/1.1" 200 -
+2025-05-29 15:55:25,502 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526925\n}\n'
+2025-05-29 15:55:25,503 - __main__ - DEBUG - Response: b'{\n  "ip_info": {\n    "wlan0": "192.168.0.32"\n  },\n  "status": "success"\n}\n'
+2025-05-29 15:55:25,503 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:25] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:25,504 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:25] "GET /get-ip HTTP/1.1" 200 -
+2025-05-29 15:55:26,225 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:26,226 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:26,238 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:26] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-29 15:55:26,275 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:26,276 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:26,277 - __main__ - DEBUG - Response: b'[\n  "A.C16",\n  "B.C16",\n  "C.C16",\n  "D.C16",\n  "E.C16",\n  "F.C16",\n  "G.C16"\n]\n'
+2025-05-29 15:55:26,278 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:26] "GET /files?folder=1 HTTP/1.1" 200 -
+2025-05-29 15:55:26,961 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:55:26,973 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:26,985 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:55:26,986 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:55:26] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:55:28,464 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:28,465 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:28,482 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526928\n}\n'
+2025-05-29 15:55:28,484 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:28] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:31,467 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:31,468 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:31,498 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526931\n}\n'
+2025-05-29 15:55:31,499 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:31] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:31,950 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:55:31,950 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:31,985 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:55:31,986 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:55:31] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:55:34,520 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:34,523 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:34,558 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526934\n}\n'
+2025-05-29 15:55:34,558 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:34] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:37,237 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:55:38,255 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:37,466 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:38,282 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:38,323 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526938\n}\n'
+2025-05-29 15:55:38,324 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:38] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:38,392 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:55:38,397 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:55:38] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:55:40,483 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:40,484 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:41,975 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526941\n}\n'
+2025-05-29 15:55:41,977 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:41] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:42,139 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:55:42,140 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:42,322 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:55:42,884 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:55:42] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:55:43,499 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:43,499 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:43,703 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526943\n}\n'
+2025-05-29 15:55:43,705 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:43] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:46,546 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:46,546 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:46,557 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526946\n}\n'
+2025-05-29 15:55:46,559 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:46] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:46,950 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:55:46,951 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:47,058 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:55:47,059 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:55:47] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:55:49,478 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:49,479 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:49,495 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526949\n}\n'
+2025-05-29 15:55:49,496 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:49] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:53,499 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:53,502 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:55:54,358 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:54,357 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:53,561 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:55:54,371 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:54,403 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:55:54,404 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:55:54] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:55:54,407 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526954\n}\n'
+2025-05-29 15:55:54,414 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:54] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:54,416 - __main__ - DEBUG - Response: b'{\n  "ip_info": {\n    "wlan0": "192.168.0.32"\n  },\n  "status": "success"\n}\n'
+2025-05-29 15:55:54,418 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:55:54] "GET /get-ip HTTP/1.1" 200 -
+2025-05-29 15:55:55,541 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:55,542 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:55,543 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:55,543 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:55,551 - __main__ - DEBUG - Response: b'{\n  "ip_info": {\n    "wlan0": "192.168.0.32"\n  },\n  "status": "success"\n}\n'
+2025-05-29 15:55:55,552 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:55] "GET /get-ip HTTP/1.1" 200 -
+2025-05-29 15:55:55,552 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526955\n}\n'
+2025-05-29 15:55:55,554 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:55] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:55:56,957 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:55:56,959 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:56,975 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:55:56,976 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:55:56] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:55:58,471 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:55:58,472 - __main__ - DEBUG - Body: b''
+2025-05-29 15:55:58,498 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526958\n}\n'
+2025-05-29 15:55:58,501 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:55:58] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:01,502 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:01,503 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:01,513 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526961\n}\n'
+2025-05-29 15:56:01,514 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:01] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:01,965 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:56:01,966 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:01,976 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:56:01,977 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:56:01] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:56:04,463 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:04,464 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:04,471 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526964\n}\n'
+2025-05-29 15:56:04,472 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:04] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:06,949 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:56:06,949 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:06,960 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:56:06,961 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:56:06] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:56:07,502 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:07,502 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:07,511 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526967\n}\n'
+2025-05-29 15:56:07,512 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:07] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:10,566 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:10,568 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:10,587 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1748526970\n}\n'
+2025-05-29 15:56:10,589 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:10] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:11,952 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:56:11,954 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:11,968 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:56:11,970 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:56:11] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:56:13,595 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:13,597 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:13,625 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526973\n}\n'
+2025-05-29 15:56:13,626 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:13] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:15,395 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:15,396 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:15,408 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526975\n}\n'
+2025-05-29 15:56:15,409 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:15] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:15,513 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:15,514 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:16,033 - __main__ - DEBUG - Response: b'{\n  "details": "Fr\\u00e9quence: 434.0 MHz, Sample rate: 2.0 MHz",\n  "message": "\\u2705 Envoy\\u00e9 : D.C16 (dossier 1)",\n  "status": "success"\n}\n'
+2025-05-29 15:56:16,034 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:16] "GET /send?folder=1&letter=D HTTP/1.1" 200 -
+2025-05-29 15:56:16,078 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:16,078 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:16,080 - __main__ - DEBUG - Response: b'{\n  "count": 1\n}\n'
+2025-05-29 15:56:16,080 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:16] "GET /click-count HTTP/1.1" 200 -
+2025-05-29 15:56:16,477 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:16,477 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:16,488 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526976\n}\n'
+2025-05-29 15:56:16,489 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:16] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:16,947 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:56:16,948 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:16,954 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:56:16,955 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:56:16] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:56:17,420 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:17,421 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:17,431 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526977\n}\n'
+2025-05-29 15:56:17,432 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:17] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:17,466 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:17,467 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:17,878 - __main__ - DEBUG - Response: b'{\n  "details": "Fr\\u00e9quence: 434.0 MHz, Sample rate: 2.0 MHz",\n  "message": "\\u2705 Envoy\\u00e9 : A.C16 (dossier 1)",\n  "status": "success"\n}\n'
+2025-05-29 15:56:17,879 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:17] "GET /send?folder=1&letter=A HTTP/1.1" 200 -
+2025-05-29 15:56:17,892 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:17,893 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:17,894 - __main__ - DEBUG - Response: b'{\n  "count": 2\n}\n'
+2025-05-29 15:56:17,894 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:17] "GET /click-count HTTP/1.1" 200 -
+2025-05-29 15:56:18,993 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:18,994 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:19,005 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526979\n}\n'
+2025-05-29 15:56:19,006 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:19] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:19,466 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:19,468 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:19,495 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526979\n}\n'
+2025-05-29 15:56:19,497 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:19] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:21,008 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Content-Length: 0
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Origin: http://192.168.0.32:5000
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:21,009 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:21,010 - __main__ - DEBUG - Response: b'{\n  "message": "Compteur remis \\u00e0 z\\u00e9ro.",\n  "status": "success"\n}\n'
+2025-05-29 15:56:21,011 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:21] "POST /reset-count HTTP/1.1" 200 -
+2025-05-29 15:56:21,955 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:56:21,957 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:21,956 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:56:21,958 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:21,965 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:56:21,966 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:56:21] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:56:21,968 - __main__ - DEBUG - Response: b'{\n  "ip_info": {\n    "wlan0": "192.168.0.32"\n  },\n  "status": "success"\n}\n'
+2025-05-29 15:56:21,970 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:56:21] "GET /get-ip HTTP/1.1" 200 -
+2025-05-29 15:56:22,332 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:22,332 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:22,343 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526982\n}\n'
+2025-05-29 15:56:22,344 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:22] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:22,494 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:22,495 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:22,534 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526982\n}\n'
+2025-05-29 15:56:22,536 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:22] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:25,099 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:25,099 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:25,111 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526985\n}\n'
+2025-05-29 15:56:25,112 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:25] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:25,172 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:25,173 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:25,522 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:25,523 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:25,526 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:25,529 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:25,545 - __main__ - DEBUG - Response: b'{\n  "ip_info": {\n    "wlan0": "192.168.0.32"\n  },\n  "status": "success"\n}\n'
+2025-05-29 15:56:25,547 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:25] "GET /get-ip HTTP/1.1" 200 -
+2025-05-29 15:56:25,548 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526985\n}\n'
+2025-05-29 15:56:25,551 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:25] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:25,714 - __main__ - DEBUG - Response: b'{\n  "details": "Fr\\u00e9quence: 434.0 MHz, Sample rate: 2.0 MHz",\n  "message": "\\u2705 Envoy\\u00e9 : C.C16 (dossier 1)",\n  "status": "success"\n}\n'
+2025-05-29 15:56:25,715 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:25] "GET /send?folder=1&letter=C HTTP/1.1" 200 -
+2025-05-29 15:56:25,758 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:25,759 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:25,760 - __main__ - DEBUG - Response: b'{\n  "count": 1\n}\n'
+2025-05-29 15:56:25,761 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:25] "GET /click-count HTTP/1.1" 200 -
+2025-05-29 15:56:26,725 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:26,725 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:26,755 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526986\n}\n'
+2025-05-29 15:56:26,755 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:26] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:26,950 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:56:26,951 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:26,961 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:56:26,962 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:56:26] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:56:27,902 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:27,902 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:27,906 - __main__ - DEBUG - Response: b'<!DOCTYPE html>\n<html lang="fr">\n  <head>\n    <meta charset="UTF-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n    <title>LoRa Sender Pro</title>\n    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>\n    <link\n      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"\n      rel="stylesheet"\n    />\n    <link href="/static/touch-effects.css" rel="stylesheet" />\n    <style>\n      * {\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n      }\n\n      body {\n        font-family: "Inter", "Segoe UI", sans-serif;\n        background: linear-gradient(135deg, #0f0c29, #24243e, #313862);\n        background-size: 400% 400%;\n        animation: gradientShift 15s ease infinite;\n        color: #ffffff;\n        min-height: 100vh;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        padding: 5px;\n        position: relative;\n        overflow-x: hidden;\n        overflow-y: hidden;\n      }\n\n      @keyframes gradientShift {\n        0% {\n          background-position: 0% 50%;\n        }\n        50% {\n          background-position: 100% 50%;\n        }\n        100% {\n          background-position: 0% 50%;\n        }\n      }\n\n      /* Particules d\'arri\xc3\xa8re-plan */\n      .particles {\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        pointer-events: none;\n        z-index: 1;\n      }\n\n      .particle {\n        position: absolute;\n        width: 2px;\n        height: 2px;\n        background: rgba(255, 255, 255, 0.3);\n        border-radius: 50%;\n        animation: float 6s ease-in-out infinite;\n      }\n\n      @keyframes float {\n        0%,\n        100% {\n          transform: translateY(0px) rotate(0deg);\n          opacity: 0.3;\n        }\n        50% {\n          transform: translateY(-20px) rotate(180deg);\n          opacity: 1;\n        }\n      }\n\n      /* Menu Param\xc3\xa8tres */\n      .settings-button {\n        position: fixed;\n        top: 30px;\n        right: 30px;\n        width: 50px;\n        height: 50px;\n        background: rgba(255, 255, 255, 0.1);\n        border: 2px solid rgba(255, 255, 255, 0.2);\n        border-radius: 50%;\n        color: white;\n        font-size: 1.2em;\n        cursor: pointer;\n        backdrop-filter: blur(10px);\n        transition: all 0.3s ease;\n        z-index: 1000;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n\n      .settings-button:hover {\n        background: rgba(255, 255, 255, 0.2);\n        transform: rotate(90deg) scale(1.1);\n      }\n\n      .settings-menu {\n        position: fixed;\n        top: 90px;\n        right: 30px;\n        width: 300px;\n        background: rgba(255, 255, 255, 0.1);\n        backdrop-filter: blur(20px);\n        border: 1px solid rgba(255, 255, 255, 0.2);\n        border-radius: 16px;\n        padding: 20px;\n        z-index: 999;\n        transform: translateX(100%) scale(0.8);\n        opacity: 0;\n        transition: all 0.3s ease;\n        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);\n      }\n\n      .settings-menu.active {\n        transform: translateX(0) scale(1);\n        opacity: 1;\n      }\n\n      .settings-item {\n        margin-bottom: 20px;\n        padding-bottom: 15px;\n        border-bottom: 1px solid rgba(255, 255, 255, 0.1);\n      }\n\n      .settings-item:last-child {\n        border-bottom: none;\n        margin-bottom: 0;\n      }\n\n      .settings-label {\n        font-size: 0.9em;\n        color: rgba(255, 255, 255, 0.7);\n        margin-bottom: 8px;\n      }\n\n      .status-display {\n        display: flex;\n        align-items: center;\n        gap: 8px;\n        font-weight: 600;\n      }\n\n      .status-connected {\n        color: #2ecc71;\n      }\n\n      .status-disconnected {\n        color: #e74c3c;\n      }\n\n      .status-checking {\n        color: #f39c12;\n      }\n\n      .hourglass-small {\n        display: inline-block;\n        font-size: 1em;\n        animation: rotate 1.5s linear infinite;\n        width: 1em;\n        height: 1em;\n        line-height: 1em;\n      }\n\n      .counter-display {\n        font-size: 1.5em;\n        font-weight: 700;\n        color: #667eea;\n        text-align: center;\n        margin: 10px 0;\n      }\n\n      .settings-btn {\n        width: 100%;\n        padding: 12px;\n        border: none;\n        border-radius: 12px;\n        font-size: 0.9em;\n        font-weight: 600;\n        cursor: pointer;\n        transition: all 0.3s ease;\n        margin-bottom: 10px;\n      }\n\n      .reset-btn {\n        background: linear-gradient(135deg, #f39c12, #e67e22);\n        color: white;\n      }\n\n      .reset-btn:hover {\n        background: linear-gradient(135deg, #e67e22, #d35400);\n        transform: translateY(-2px);\n      }\n\n      .shutdown-btn {\n        background: linear-gradient(135deg, #e74c3c, #c0392b);\n        color: white;\n      }\n\n      .shutdown-btn:hover {\n        background: linear-gradient(135deg, #c0392b, #a93226);\n        transform: translateY(-2px);\n      }\n\n      /* Popup de confirmation personnalis\xc3\xa9 */\n      .confirmation-overlay {\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        background: rgba(0, 0, 0, 0.7);\n        backdrop-filter: blur(5px);\n        z-index: 2000;\n        display: none;\n        align-items: center;\n        justify-content: center;\n      }\n\n      .confirmation-popup {\n        background: rgba(255, 255, 255, 0.1);\n        backdrop-filter: blur(20px);\n        border: 1px solid rgba(255, 255, 255, 0.2);\n        border-radius: 20px;\n        padding: 30px;\n        max-width: 400px;\n        width: 90%;\n        text-align: center;\n        transform: scale(0.8);\n        opacity: 0;\n        transition: all 0.3s ease;\n      }\n\n      .confirmation-popup.active {\n        transform: scale(1);\n        opacity: 1;\n      }\n\n      .confirmation-icon {\n        font-size: 3em;\n        margin-bottom: 20px;\n      }\n\n      .confirmation-title {\n        font-size: 1.3em;\n        font-weight: 700;\n        margin-bottom: 15px;\n      }\n\n      .confirmation-message {\n        color: rgba(255, 255, 255, 0.8);\n        margin-bottom: 25px;\n        line-height: 1.5;\n      }\n\n      .confirmation-buttons {\n        display: flex;\n        gap: 15px;\n        justify-content: center;\n      }\n\n      .confirm-btn,\n      .cancel-btn {\n        padding: 12px 25px;\n        border: none;\n        border-radius: 12px;\n        font-weight: 600;\n        cursor: pointer;\n        transition: all 0.3s ease;\n        min-width: 100px;\n      }\n\n      .confirm-btn {\n        background: linear-gradient(135deg, #e74c3c, #c0392b);\n        color: white;\n      }\n\n      .confirm-btn:hover {\n        background: linear-gradient(135deg, #c0392b, #a93226);\n        transform: translateY(-2px);\n      }\n\n      .cancel-btn {\n        background: rgba(255, 255, 255, 0.1);\n        color: white;\n        border: 1px solid rgba(255, 255, 255, 0.3);\n      }\n\n      .cancel-btn:hover {\n        background: rgba(255, 255, 255, 0.2);\n        transform: translateY(-2px);\n      }\n\n      .container {\n        background: rgba(255, 255, 255, 0.05);\n        backdrop-filter: blur(20px);\n        border: 1px solid rgba(255, 255, 255, 0.1);\n        border-radius: 24px;\n        padding: 30px;\n        max-width: 600px;\n        width: 100%;\n        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);\n        position: relative;\n        z-index: 10;\n        transform: translateY(20px);\n        opacity: 0;\n        margin-bottom: 10px;\n      }\n\n      .header {\n        text-align: center;\n        margin-bottom: 40px;\n      }\n\n      .title {\n        font-size: 2.8em;\n        font-weight: 700;\n        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n        -webkit-background-clip: text;\n        -webkit-text-fill-color: transparent;\n        background-clip: text;\n        margin-bottom: 10px;\n        text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);\n      }\n\n      .subtitle {\n        font-size: 1.1em;\n        color: rgba(255, 255, 255, 0.7);\n        font-weight: 300;\n      }\n\n      .connection-status-indicator {\n        position: fixed;\n        top: 15px;\n        left: 50%;\n        transform: translateX(-50%);\n        font-size: 0.9em;\n        padding: 8px 15px;\n        background: rgba(0, 0, 0, 0.3);\n        display: inline-block;\n        border-radius: 20px;\n        z-index: 999;\n        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);\n        min-width: 180px;\n        text-align: center;\n      }\n\n      .status-connected {\n        color: #2ecc71;\n        font-weight: 600;\n      }\n\n      .status-disconnected {\n        color: #e74c3c;\n        font-weight: 600;\n      }\n\n      .control-section {\n        margin-bottom: 30px;\n      }\n\n      .control-label {\n        display: flex;\n        align-items: center;\n        gap: 10px;\n        font-size: 1.2em;\n        font-weight: 600;\n        margin-bottom: 15px;\n        color: rgba(255, 255, 255, 0.9);\n      }\n\n      .control-label i {\n        color: #667eea;\n        font-size: 1.3em;\n      }\n\n      .select-wrapper {\n        position: relative;\n        margin-bottom: 20px;\n      }\n\n      select {\n        width: 100%;\n        font-size: 1.1em;\n        padding: 16px 20px;\n        border-radius: 16px;\n        border: 2px solid rgba(255, 255, 255, 0.1);\n        background: rgba(255, 255, 255, 0.9);\n        color: #333333;\n        backdrop-filter: blur(10px);\n        transition: all 0.3s ease;\n        appearance: none;\n        cursor: pointer;\n        font-weight: 500;\n      }\n\n      select option {\n        background: #ffffff;\n        color: #333333;\n        padding: 10px;\n      }\n\n      select:hover {\n        border-color: rgba(102, 126, 234, 0.5);\n        background: rgba(255, 255, 255, 0.95);\n        transform: translateY(-2px);\n      }\n\n      select:focus {\n        outline: none;\n        border-color: #667eea;\n        box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);\n      }\n\n      .select-wrapper::after {\n        content: "\\f107";\n        font-family: "Font Awesome 6 Free";\n        font-weight: 900;\n        position: absolute;\n        right: 20px;\n        top: 50%;\n        transform: translateY(-50%);\n        color: #666666;\n        pointer-events: none;\n      }\n\n      .file-buttons {\n        display: grid;\n        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));\n        gap: 15px;\n        margin-top: 30px;\n      }\n\n      .btn {\n        background: linear-gradient(\n          135deg,\n          rgba(102, 126, 234, 0.2),\n          rgba(118, 75, 162, 0.2)\n        );\n        color: #ffffff;\n        border: 2px solid rgba(255, 255, 255, 0.1);\n        border-radius: 16px;\n        padding: 18px 20px;\n        font-size: 1.1em;\n        font-weight: 600;\n        cursor: pointer;\n        backdrop-filter: blur(10px);\n        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n        position: relative;\n        overflow: hidden;\n        min-height: 60px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n      }\n\n      .btn::before {\n        content: "";\n        position: absolute;\n        top: 0;\n        left: -100%;\n        width: 100%;\n        height: 100%;\n        background: linear-gradient(\n          90deg,\n          transparent,\n          rgba(255, 255, 255, 0.2),\n          transparent\n        );\n        transition: left 0.5s;\n      }\n\n      .btn:hover {\n        background: linear-gradient(\n          135deg,\n          rgba(102, 126, 234, 0.4),\n          rgba(118, 75, 162, 0.4)\n        );\n        border-color: rgba(102, 126, 234, 0.6);\n        transform: translateY(-3px) scale(1.02);\n        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);\n      }\n\n      .btn:hover::before {\n        left: 100%;\n      }\n\n      .btn:active {\n        transform: translateY(-1px) scale(0.98);\n      }\n\n      .btn:disabled {\n        opacity: 0.7;\n        cursor: not-allowed;\n        transform: none !important;\n      }\n\n      .hourglass {\n        display: inline-block;\n        font-size: 1.2em;\n        animation: rotate 2s linear infinite;\n        width: 1.2em;\n        height: 1.2em;\n        line-height: 1.2em;\n      }\n\n      @keyframes rotate {\n        from {\n          transform: rotate(0deg);\n        }\n        to {\n          transform: rotate(360deg);\n        }\n      }\n\n      #popup {\n        position: fixed;\n        bottom: 30px;\n        left: 50%;\n        transform: translateX(-50%) translateY(100px);\n        background: linear-gradient(135deg, #2ecc71, #27ae60);\n        color: white;\n        padding: 20px 30px;\n        border-radius: 16px;\n        font-size: 1em;\n        font-weight: 600;\n        display: none;\n        z-index: 1000;\n        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);\n        backdrop-filter: blur(10px);\n        border: 1px solid rgba(255, 255, 255, 0.1);\n        min-width: 250px;\n        text-align: center;\n        max-width: 80%;\n      }\n\n      #popup br {\n        margin-top: 5px;\n      }\n\n      .popup-error {\n        background: linear-gradient(135deg, #e74c3c, #c0392b) !important;\n      }\n\n      @media (max-width: 768px) {\n        .settings-button {\n          top: 20px;\n          right: 20px;\n          width: 45px;\n          height: 45px;\n        }\n\n        .connection-status-indicator {\n          top: 10px;\n          padding: 4px 12px;\n          font-size: 0.8em;\n        }\n\n        .settings-menu {\n          top: 75px;\n          right: 20px;\n          width: calc(100vw - 40px);\n          max-width: 280px;\n        }\n\n        .container {\n          padding: 30px 20px;\n          margin: 10px;\n        }\n\n        .title {\n          font-size: 2.2em;\n        }\n\n        .file-buttons {\n          grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));\n          gap: 12px;\n        }\n\n        .btn {\n          padding: 15px 16px;\n          font-size: 1em;\n          min-height: 55px;\n        }\n      }\n\n      @media (max-width: 480px) {\n        .title {\n          font-size: 1.8em;\n        }\n\n        .file-buttons {\n          grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));\n          gap: 10px;\n        }\n      }\n    </style>\n  </head>\n  <body>\n    <div class="particles" id="particles"></div>\n\n    <!-- Indicateur de connexion HackRF (en haut au centre) -->\n    <div class="connection-status-indicator" id="mainConnectionStatus">\n      <span class="status-disconnected"\n        ><i class="fas fa-signal"></i> V\xc3\xa9rification...</span\n      >\n    </div>\n\n    <!-- Badge d\'adresse IP -->\n    <div\n      class="ip-badge"\n      id="ipBadge"\n      style="\n        position: fixed;\n        top: 15px;\n        left: 15px;\n        background: rgba(0, 0, 0, 0.3);\n        border-radius: 20px;\n        padding: 8px 15px;\n        font-size: 0.9em;\n        display: flex;\n        align-items: center;\n        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\n        backdrop-filter: blur(10px);\n      "\n    >\n      <i\n        class="fas fa-network-wired"\n        style="margin-right: 8px; color: #66e0ff"\n      ></i>\n      <span id="ipAddress">Chargement...</span>\n    </div>\n\n    <!-- Navigation bar -->\n    <div\n      class="navbar"\n      style="\n        position: fixed;\n        bottom: 20px;\n        left: 50%;\n        transform: translateX(-50%);\n        display: flex;\n        background: rgba(255, 255, 255, 0.1);\n        backdrop-filter: blur(10px);\n        border-radius: 30px;\n        padding: 10px;\n        z-index: 1000;\n        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);\n        border: 1px solid rgba(255, 255, 255, 0.1);\n      "\n    >\n      <a\n        href="/"\n        class="nav-btn active"\n        style="\n          width: 60px;\n          height: 60px;\n          border-radius: 50%;\n          background: rgba(255, 255, 255, 0.25);\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          margin: 0 5px;\n          font-size: 22px;\n          color: white;\n          cursor: pointer;\n          transition: all 0.3s ease;\n        "\n      >\n        <i class="fas fa-satellite-dish"></i>\n      </a>\n      <a\n        href="/wifi.html"\n        class="nav-btn"\n        style="\n          width: 60px;\n          height: 60px;\n          border-radius: 50%;\n          background: rgba(255, 255, 255, 0.1);\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          margin: 0 5px;\n          font-size: 22px;\n          color: white;\n          cursor: pointer;\n          transition: all 0.3s ease;\n        "\n      >\n        <i class="fas fa-wifi"></i>\n      </a>\n      <div\n        class="nav-btn"\n        onclick="window.location.reload()"\n        style="\n          width: 60px;\n          height: 60px;\n          border-radius: 50%;\n          background: rgba(255, 255, 255, 0.1);\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          margin: 0 5px;\n          font-size: 22px;\n          color: white;\n          cursor: pointer;\n          transition: all 0.3s ease;\n        "\n      >\n        <i class="fas fa-sync-alt"></i>\n      </div>\n      <div\n        class="nav-btn"\n        onclick="showExitKioskModal()"\n        style="\n          width: 60px;\n          height: 60px;\n          border-radius: 50%;\n          background: rgba(255, 255, 255, 0.1);\n          display: flex;\n          align-items: center;\n          justify-content: center;\n          margin: 0 5px;\n          font-size: 22px;\n          color: white;\n          cursor: pointer;\n          transition: all 0.3s ease;\n        "\n        title="Quitter le mode kiosque"\n      >\n        <i class="fas fa-sign-out-alt"></i>\n      </div>\n    </div>\n\n    <!-- Bouton Param\xc3\xa8tres -->\n    <button class="settings-button" onclick="toggleSettings()">\n      <i class="fas fa-cog"></i>\n    </button>\n\n    <!-- Menu Param\xc3\xa8tres -->\n    <div class="settings-menu" id="settingsMenu">\n      <div class="settings-item">\n        <div class="settings-label">Compteur de clics</div>\n        <div class="counter-display" id="clickCounter">0</div>\n      </div>\n\n      <div class="settings-item">\n        <button\n          class="settings-btn reset-btn"\n          onclick="showConfirmation(\'reset\')"\n        >\n          <i class="fas fa-undo"></i> Reset\n        </button>\n        <button\n          class="settings-btn shutdown-btn"\n          onclick="showConfirmation(\'shutdown\')"\n        >\n          <i class="fas fa-power-off"></i> \xc3\x89teindre\n        </button>\n      </div>\n    </div>\n\n    <!-- Popup de confirmation -->\n    <div class="confirmation-overlay" id="confirmationOverlay">\n      <div class="confirmation-popup" id="confirmationPopup">\n        <div class="confirmation-icon" id="confirmationIcon"></div>\n        <div class="confirmation-title" id="confirmationTitle"></div>\n        <div class="confirmation-message" id="confirmationMessage"></div>\n        <div class="confirmation-buttons">\n          <button class="confirm-btn" id="confirmBtn">Confirmer</button>\n          <button class="cancel-btn" onclick="hideConfirmation()">\n            Annuler\n          </button>\n        </div>\n      </div>\n    </div>\n\n    <!-- Modal de sortie du mode kiosque -->\n    <div\n      class="modal-overlay"\n      id="exitKioskModal"\n      style="\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        background: rgba(0, 0, 0, 0.5);\n        backdrop-filter: blur(5px);\n        display: none;\n        align-items: center;\n        justify-content: center;\n        z-index: 100;\n      "\n    >\n      <div\n        class="modal"\n        id="exitModalContent"\n        style="\n          background: rgba(30, 30, 30, 0.95);\n          border-radius: 20px;\n          padding: 30px;\n          width: 90%;\n          max-width: 400px;\n          transform: scale(0.8);\n          opacity: 0;\n          transition: all 0.3s ease;\n          border: 1px solid rgba(255, 255, 255, 0.1);\n        "\n      >\n        <div\n          class="modal-header"\n          style="text-align: center; margin-bottom: 20px"\n        >\n          <div\n            class="modal-title"\n            style="font-size: 1.5em; font-weight: 600; margin-bottom: 5px"\n          >\n            Quitter le mode kiosque\n          </div>\n          <div\n            class="modal-subtitle"\n            style="color: rgba(255, 255, 255, 0.7); font-size: 0.9em"\n          >\n            Choisissez une option\n          </div>\n        </div>\n\n        <div style="margin-bottom: 20px">\n          <div style="text-align: center; margin-bottom: 20px">\n            <i\n              class="fas fa-sign-out-alt"\n              style="font-size: 3em; color: #ff9f43"\n            ></i>\n          </div>\n          <p style="margin-bottom: 20px; text-align: center">\n            Que souhaitez-vous faire ?\n          </p>\n        </div>\n\n        <div style="display: flex; flex-direction: column; gap: 15px">\n          <button\n            class="btn primary"\n            onclick="exitKioskMode()"\n            style="\n              flex: 1;\n              padding: 15px;\n              border: none;\n              border-radius: 16px;\n              background: linear-gradient(135deg, #66e0ff, #83a4d4);\n              color: white;\n              font-weight: 600;\n              font-size: 1em;\n              cursor: pointer;\n              transition: all 0.3s ease;\n              display: flex;\n              align-items: center;\n              justify-content: center;\n            "\n          >\n            <i class="fas fa-desktop" style="margin-right: 8px"></i> Retour au\n            bureau\n          </button>\n          <button\n            class="btn"\n            onclick="restartSystem()"\n            style="\n              flex: 1;\n              padding: 15px;\n              border: none;\n              border-radius: 16px;\n              background: linear-gradient(135deg, #ff9f43, #ff7700);\n              color: white;\n              font-weight: 600;\n              font-size: 1em;\n              cursor: pointer;\n              transition: all 0.3s ease;\n              display: flex;\n              align-items: center;\n              justify-content: center;\n            "\n          >\n            <i class="fas fa-sync-alt" style="margin-right: 8px"></i> Red\xc3\xa9marrer\n          </button>\n          <button\n            class="btn"\n            onclick="shutdownSystem()"\n            style="\n              flex: 1;\n              padding: 15px;\n              border: none;\n              border-radius: 16px;\n              background: linear-gradient(135deg, #ee5253, #c0392b);\n              color: white;\n              font-weight: 600;\n              font-size: 1em;\n              cursor: pointer;\n              transition: all 0.3s ease;\n              display: flex;\n              align-items: center;\n              justify-content: center;\n            "\n          >\n            <i class="fas fa-power-off" style="margin-right: 8px"></i> \xc3\x89teindre\n          </button>\n          <button\n            class="btn"\n            onclick="hideExitKioskModal()"\n            style="\n              flex: 1;\n              padding: 15px;\n              border: none;\n              border-radius: 16px;\n              background: rgba(255, 255, 255, 0.1);\n              color: white;\n              font-weight: 600;\n              font-size: 1em;\n              cursor: pointer;\n              transition: all 0.3s ease;\n              display: flex;\n              align-items: center;\n              justify-content: center;\n            "\n          >\n            <i class="fas fa-times" style="margin-right: 8px"></i> Annuler\n          </button>\n        </div>\n      </div>\n    </div>\n\n    <div class="container" id="mainContainer">\n      <div class="header">\n        <h1 class="title">\n          <i class="fas fa-satellite-dish"></i>\n          LoRa Control Pro\n        </h1>\n        <p class="subtitle">Interface de contr\xc3\xb4le HackRF avanc\xc3\xa9e</p>\n      </div>\n\n      <div class="control-section">\n        <label class="control-label" for="folder">\n          <i class="fas fa-folder-open"></i>\n          S\xc3\xa9lectionner un dossier\n        </label>\n        <div class="select-wrapper">\n          <select id="folder" onchange="loadFiles()">\n            \n            <option value="1">1</option>\n            \n            <option value="2">2</option>\n            \n            <option value="3">3</option>\n            \n            <option value="4">4</option>\n            \n            <option value="5">5</option>\n            \n            <option value="6">6</option>\n            \n            <option value="7">7</option>\n            \n            <option value="8">8</option>\n            \n            <option value="11">11</option>\n            \n            <option value="12">12</option>\n            \n            <option value="13">13</option>\n            \n          </select>\n        </div>\n      </div>\n\n      <div class="control-section">\n        <label class="control-label">\n          <i class="fas fa-radio"></i>\n          Signaux disponibles\n        </label>\n        <div class="file-buttons" id="fileButtons">\n          <!-- Les boutons seront g\xc3\xa9n\xc3\xa9r\xc3\xa9s dynamiquement -->\n        </div>\n      </div>\n    </div>\n\n    <div id="popup"></div>\n\n    <script>\n      let clickCount = 0;\n      let settingsOpen = false;\n      let checkHackRFInterval; // Variable pour stocker l\'intervalle de v\xc3\xa9rification\n\n      // Animation d\'entr\xc3\xa9e\n      gsap.to("#mainContainer", {\n        y: 0,\n        opacity: 1,\n        duration: 1,\n        ease: "power3.out",\n        delay: 0.2,\n      });\n\n      // Cr\xc3\xa9ation des particules\n      function createParticles() {\n        const particlesContainer = document.getElementById("particles");\n        for (let i = 0; i < 50; i++) {\n          const particle = document.createElement("div");\n          particle.className = "particle";\n          particle.style.left = Math.random() * 100 + "%";\n          particle.style.top = Math.random() * 100 + "%";\n          particle.style.animationDelay = Math.random() * 6 + "s";\n          particle.style.animationDuration = Math.random() * 3 + 3 + "s";\n          particlesContainer.appendChild(particle);\n        }\n      }\n\n      // R\xc3\xa9cup\xc3\xa9rer l\'adresse IP\n      function getIpAddress() {\n        fetch("/get-ip")\n          .then((res) => res.json())\n          .then((data) => {\n            if (data.status === "success") {\n              const ipInfo = data.ip_info;\n              let ipDisplay = "";\n\n              // Priorit\xc3\xa9 \xc3\xa0 wlan0, puis eth0, puis default\n              if (ipInfo.wlan0) {\n                ipDisplay = `WiFi: ${ipInfo.wlan0}`;\n              } else if (ipInfo.eth0) {\n                ipDisplay = `Ethernet: ${ipInfo.eth0}`;\n              } else if (ipInfo.default) {\n                ipDisplay = ipInfo.default;\n              } else {\n                ipDisplay = "Non connect\xc3\xa9";\n              }\n\n              document.getElementById("ipAddress").textContent = ipDisplay;\n            } else {\n              document.getElementById("ipAddress").textContent =\n                "Non disponible";\n            }\n          })\n          .catch((err) => {\n            console.error("Erreur lors de la r\xc3\xa9cup\xc3\xa9ration de l\'IP:", err);\n            document.getElementById("ipAddress").textContent = "Erreur";\n          });\n      }\n\n      // Gestion du menu param\xc3\xa8tres\n      function toggleSettings() {\n        const menu = document.getElementById("settingsMenu");\n        settingsOpen = !settingsOpen;\n\n        if (settingsOpen) {\n          menu.classList.add("active");\n          // Simuler la v\xc3\xa9rification du statut HackRF\n          checkHackRFStatus();\n        } else {\n          menu.classList.remove("active");\n        }\n      }\n\n      // Fermer le menu si on clique ailleurs\n      document.addEventListener("click", function (event) {\n        const settingsButton = document.querySelector(".settings-button");\n        const settingsMenu = document.getElementById("settingsMenu");\n\n        if (\n          !settingsButton.contains(event.target) &&\n          !settingsMenu.contains(event.target)\n        ) {\n          settingsMenu.classList.remove("active");\n          settingsOpen = false;\n        }\n      });\n\n      // V\xc3\xa9rification du statut HackRF\n      function checkHackRFStatus() {\n        const mainStatusElement = document.getElementById(\n          "mainConnectionStatus"\n        );\n\n        // Ne pas montrer d\'\xc3\xa9tat interm\xc3\xa9diaire de v\xc3\xa9rification\n        fetch("/hackrf-status")\n          .then((res) => res.json())\n          .then((data) => {\n            if (data.status === "connected") {\n              // Afficher seulement l\'\xc3\xa9tat connect\xc3\xa9\n              mainStatusElement.innerHTML =\n                \'<span class="status-connected"><i class="fas fa-signal"></i> HackRF connect\xc3\xa9</span>\';\n\n              // Stocker l\'horodatage de la derni\xc3\xa8re v\xc3\xa9rification r\xc3\xa9ussie\n              const lastConnectTime = new Date();\n              mainStatusElement.setAttribute(\n                "data-last-connect",\n                lastConnectTime.getTime()\n              );\n            } else {\n              // Afficher seulement l\'\xc3\xa9tat d\xc3\xa9connect\xc3\xa9\n              mainStatusElement.innerHTML =\n                \'<span class="status-disconnected"><i class="fas fa-exclamation-triangle"></i> HackRF non connect\xc3\xa9</span>\';\n            }\n          })\n          .catch(() => {\n            // En cas d\'erreur, afficher comme d\xc3\xa9connect\xc3\xa9\n            mainStatusElement.innerHTML =\n              \'<span class="status-disconnected"><i class="fas fa-exclamation-circle"></i> HackRF non connect\xc3\xa9</span>\';\n          });\n      }\n\n      // Mise \xc3\xa0 jour du compteur\n      function updateClickCounter() {\n        fetch("/click-count")\n          .then((res) => res.json())\n          .then((data) => {\n            clickCount = data.count;\n            document.getElementById("clickCounter").textContent = clickCount;\n          })\n          .catch((err) => {\n            console.error("Erreur lors de la mise \xc3\xa0 jour du compteur:", err);\n          });\n      }\n\n      // Popup de confirmation\n      function showConfirmation(type) {\n        const overlay = document.getElementById("confirmationOverlay");\n        const popup = document.getElementById("confirmationPopup");\n        const icon = document.getElementById("confirmationIcon");\n        const title = document.getElementById("confirmationTitle");\n        const message = document.getElementById("confirmationMessage");\n        const confirmBtn = document.getElementById("confirmBtn");\n\n        if (type === "reset") {\n          icon.innerHTML = "\xf0\x9f\x94\x84";\n          title.textContent = "Confirmer le Reset";\n          message.textContent =\n            "\xc3\x8ates-vous s\xc3\xbbr de vouloir remettre le compteur \xc3\xa0 z\xc3\xa9ro ?";\n          confirmBtn.onclick = () => {\n            resetCounter();\n            hideConfirmation();\n          };\n        } else if (type === "shutdown") {\n          icon.innerHTML = "\xe2\x9a\xa0\xef\xb8\x8f";\n          title.textContent = "Confirmer l\'arr\xc3\xaat";\n          message.textContent =\n            "\xc3\x8ates-vous s\xc3\xbbr de vouloir \xc3\xa9teindre le syst\xc3\xa8me ? Cette action ne peut pas \xc3\xaatre annul\xc3\xa9e.";\n          confirmBtn.onclick = () => {\n            shutdown();\n            hideConfirmation();\n          };\n        }\n\n        overlay.style.display = "flex";\n        setTimeout(() => {\n          popup.classList.add("active");\n        }, 10);\n      }\n\n      function hideConfirmation() {\n        const overlay = document.getElementById("confirmationOverlay");\n        const popup = document.getElementById("confirmationPopup");\n\n        popup.classList.remove("active");\n        setTimeout(() => {\n          overlay.style.display = "none";\n        }, 300);\n      }\n\n      // Actions des boutons\n      function resetCounter() {\n        const resetBtn = document.querySelector(".reset-btn");\n        const originalText = resetBtn.innerHTML;\n        resetBtn.innerHTML =\n          \'<span class="hourglass" style="display:inline-block;width:1.2em;height:1.2em;">\xe2\x8f\xb3</span> Reset\';\n        resetBtn.disabled = true;\n        fetch("/reset-count", { method: "POST" })\n          .then((res) => res.json())\n          .then((data) => {\n            clickCount = 0;\n            document.getElementById("clickCounter").textContent = clickCount;\n            showPopup(\n              data.message || "Compteur remis \xc3\xa0 z\xc3\xa9ro",\n              data.status === "success"\n            );\n          })\n          .catch(() => {\n            showPopup("Erreur lors du reset", false);\n          })\n          .finally(() => {\n            resetBtn.innerHTML = originalText;\n            resetBtn.disabled = false;\n          });\n      }\n\n      function shutdown() {\n        const shutdownBtn = document.querySelector(".shutdown-btn");\n        const originalText = shutdownBtn.innerHTML;\n        shutdownBtn.innerHTML =\n          \'<span class="hourglass" style="display:inline-block;width:1.2em;height:1.2em;">\xe2\x8f\xb3</span> \xc3\x89teindre\';\n        shutdownBtn.disabled = true;\n        fetch("/shutdown", { method: "POST" })\n          .then((res) => res.json())\n          .then((data) => {\n            showPopup(\n              data.message || "Arr\xc3\xaat du syst\xc3\xa8me en cours...",\n              data.status === "success"\n            );\n          })\n          .catch(() => {\n            showPopup("Erreur lors de l\'arr\xc3\xaat", false);\n          })\n          .finally(() => {\n            shutdownBtn.innerHTML = originalText;\n            shutdownBtn.disabled = false;\n          });\n      }\n\n      const popup = document.getElementById("popup");\n\n      function showPopup(msg, success = true) {\n        // Pr\xc3\xa9fixer avec l\'ic\xc3\xb4ne appropri\xc3\xa9e\n        const iconHTML = success\n          ? `<i class="fas fa-check-circle"></i> `\n          : `<i class="fas fa-exclamation-triangle"></i> `;\n\n        // Le message peut contenir du HTML (pour les d\xc3\xa9tails)\n        popup.innerHTML = iconHTML + msg;\n\n        popup.className = success ? "" : "popup-error";\n        popup.style.display = "block";\n\n        gsap.fromTo(\n          popup,\n          { y: 100, opacity: 0, scale: 0.8 },\n          { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }\n        );\n\n        // Dur\xc3\xa9e plus longue si le message contient des d\xc3\xa9tails\n        const displayDuration = msg.includes("<br>") ? 5000 : 3500;\n\n        setTimeout(() => {\n          gsap.to(popup, {\n            y: 100,\n            opacity: 0,\n            scale: 0.8,\n            duration: 0.4,\n            ease: "back.in(1.7)",\n            onComplete: () => (popup.style.display = "none"),\n          });\n        }, displayDuration);\n      }\n\n      function showLoading(button) {\n        const originalText = button.innerHTML;\n        button.innerHTML =\n          \'<span class="hourglass" style="display:inline-block;width:1.2em;height:1.2em;">\xe2\x8f\xb3</span>\';\n        button.disabled = true;\n        return originalText;\n      }\n\n      function hideLoading(button, originalText) {\n        button.innerHTML = originalText;\n        button.disabled = false;\n      }\n\n      function loadFiles() {\n        const folder = document.getElementById("folder").value;\n        const container = document.getElementById("fileButtons");\n\n        // Animation de sortie des anciens boutons\n        gsap.to(container.children, {\n          scale: 0,\n          opacity: 0,\n          duration: 0.3,\n          stagger: 0.05,\n          onComplete: () => {\n            fetch(`/files?folder=${folder}`)\n              .then((res) => res.json())\n              .then((data) => {\n                container.innerHTML = "";\n                data.forEach((file, index) => {\n                  const letter = file.split(".")[0];\n                  const btn = document.createElement("button");\n                  btn.textContent = letter;\n                  btn.className = "btn";\n                  btn.onclick = () => sendFile(folder, letter, btn);\n                  btn.style.opacity = "0";\n                  btn.style.transform = "scale(0.8)";\n                  container.appendChild(btn);\n\n                  // Animation d\'entr\xc3\xa9e des nouveaux boutons\n                  gsap.to(btn, {\n                    opacity: 1,\n                    scale: 1,\n                    duration: 0.4,\n                    delay: index * 0.1,\n                    ease: "back.out(1.7)",\n                  });\n                });\n              })\n              .catch((err) => {\n                showPopup("Erreur lors du chargement des fichiers", false);\n              });\n          },\n        });\n      }\n\n      function sendFile(folder, letter, button) {\n        const originalText = showLoading(button);\n\n        // V\xc3\xa9rifier d\'abord si le HackRF est connect\xc3\xa9\n        fetch("/hackrf-status")\n          .then((res) => res.json())\n          .then((data) => {\n            if (data.status === "connected") {\n              // Si le HackRF est connect\xc3\xa9, proc\xc3\xa9der \xc3\xa0 l\'envoi\n              fetch(`/send?folder=${folder}&letter=${letter}`)\n                .then((res) => res.json())\n                .then((data) => {\n                  hideLoading(button, originalText);\n\n                  // Simplifier le message de confirmation d\'envoi\n                  if (data.status === "success") {\n                    showPopup("\xe2\x9c\x85 Signal envoy\xc3\xa9 avec succ\xc3\xa8s", true);\n                    updateClickCounter();\n\n                    // Animation de succ\xc3\xa8s sur le bouton\n                    gsap.to(button, {\n                      scale: 1.1,\n                      duration: 0.2,\n                      yoyo: true,\n                      repeat: 1,\n                      ease: "power2.inOut",\n                    });\n                  } else {\n                    showPopup(data.message || "Erreur lors de l\'envoi", false);\n                  }\n                })\n                .catch((err) => {\n                  hideLoading(button, originalText);\n                  showPopup("Erreur lors de l\'envoi", false);\n                });\n            } else {\n              // Si le HackRF n\'est pas connect\xc3\xa9, afficher une erreur\n              hideLoading(button, originalText);\n              showPopup(\n                "HackRF non d\xc3\xa9tect\xc3\xa9. Veuillez v\xc3\xa9rifier la connexion.",\n                false\n              );\n            }\n          })\n          .catch((err) => {\n            hideLoading(button, originalText);\n            showPopup("Erreur lors de la v\xc3\xa9rification du HackRF", false);\n          });\n      }\n\n      // Initialisation\n      createParticles();\n      loadFiles();\n      loadClickCount();\n      checkHackRFStatus(); // V\xc3\xa9rifier le statut HackRF au d\xc3\xa9marrage\n      startPeriodicHackRFCheck(); // D\xc3\xa9marrer la v\xc3\xa9rification p\xc3\xa9riodique\n      getIpAddress(); // R\xc3\xa9cup\xc3\xa9rer l\'adresse IP\n\n      // Rafra\xc3\xaechir r\xc3\xa9guli\xc3\xa8rement l\'adresse IP\n      setInterval(() => {\n        getIpAddress();\n      }, 30000); // Toutes les 30 secondes\n\n      // Fonction pour d\xc3\xa9marrer la v\xc3\xa9rification p\xc3\xa9riodique du HackRF\n      function startPeriodicHackRFCheck() {\n        // Nettoyer l\'ancien intervalle s\'il existe\n        if (checkHackRFInterval) {\n          clearInterval(checkHackRFInterval);\n        }\n\n        // Cr\xc3\xa9er un nouvel intervalle qui v\xc3\xa9rifie toutes les 3 secondes\n        checkHackRFInterval = setInterval(function () {\n          checkHackRFStatus();\n        }, 3000); // 3000 ms = 3 secondes\n      }\n\n      // Chargement du compteur au d\xc3\xa9marrage\n      function loadClickCount() {\n        fetch("/click-count")\n          .then((res) => res.json())\n          .then((data) => {\n            clickCount = data.count;\n            document.getElementById("clickCounter").textContent = clickCount;\n          })\n          .catch((err) => {\n            console.error("Erreur lors du chargement du compteur:", err);\n          });\n      }\n\n      // Animation continue du gradient\n      gsap.to("body", {\n        backgroundPosition: "200% 50%",\n        duration: 20,\n        ease: "none",\n        repeat: -1,\n      });\n\n      // Arr\xc3\xaater la v\xc3\xa9rification p\xc3\xa9riodique lorsque l\'utilisateur quitte la page\n      window.addEventListener("beforeunload", function () {\n        if (checkHackRFInterval) {\n          clearInterval(checkHackRFInterval);\n        }\n      });\n    </script>\n    <script src="/static/touch-animations.js"></script>\n  </body>\n</html>'
+2025-05-29 15:56:27,914 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:27] "GET / HTTP/1.1" 200 -
+2025-05-29 15:56:28,023 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: text/css,*/*;q=0.1
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:28,024 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:28,034 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:28,035 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:28,060 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:28] "[35m[1mGET /static/touch-effects.css HTTP/1.1[0m" 500 -
+2025-05-29 15:56:28,065 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:28] "[35m[1mGET /static/touch-animations.js HTTP/1.1[0m" 500 -
+2025-05-29 15:56:28,372 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:28,373 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:28,374 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:28,375 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:28,376 - __main__ - DEBUG - Response: b'{\n  "count": 1\n}\n'
+2025-05-29 15:56:28,376 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:28,377 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:28,378 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:28] "GET /click-count HTTP/1.1" 200 -
+2025-05-29 15:56:28,388 - __main__ - DEBUG - Response: b'{\n  "ip_info": {\n    "wlan0": "192.168.0.32"\n  },\n  "status": "success"\n}\n'
+2025-05-29 15:56:28,389 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:28] "GET /get-ip HTTP/1.1" 200 -
+2025-05-29 15:56:28,392 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526988\n}\n'
+2025-05-29 15:56:28,393 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:28] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:29,008 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:29,008 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:29,019 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-05-29 15:56:29,220 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:29,221 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:29,222 - __main__ - DEBUG - Response: b'[\n  "A.C16",\n  "B.C16",\n  "C.C16",\n  "D.C16",\n  "E.C16",\n  "F.C16",\n  "G.C16"\n]\n'
+2025-05-29 15:56:29,222 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:29] "GET /files?folder=1 HTTP/1.1" 200 -
+2025-05-29 15:56:29,843 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:29,844 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:29,855 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526989\n}\n'
+2025-05-29 15:56:29,855 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:29] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:31,372 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:31,374 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:31,400 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526991\n}\n'
+2025-05-29 15:56:31,402 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:31] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:31,949 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:56:31,949 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:31,956 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:56:31,957 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:56:31] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:56:34,370 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:34,371 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:34,383 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526994\n}\n'
+2025-05-29 15:56:34,384 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:34] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:36,972 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:56:36,973 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:36,986 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:56:36,987 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:56:36] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:56:37,370 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:37,372 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:37,390 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748526997\n}\n'
+2025-05-29 15:56:37,391 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:37] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:40,395 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:40,396 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:40,419 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748527000\n}\n'
+2025-05-29 15:56:40,420 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:40] "GET /hackrf-status HTTP/1.1" 200 -
+2025-05-29 15:56:41,962 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Not.A/Brand";v="99", "Chromium";v="136"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-05-29 15:56:41,964 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:41,980 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-05-29 15:56:41,982 - werkzeug - INFO - 127.0.0.1 - - [29/May/2025 15:56:41] "GET /wifi-status HTTP/1.1" 200 -
+2025-05-29 15:56:43,371 - __main__ - DEBUG - Headers: Host: 192.168.0.32:5000
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Accept: */*
+Referer: http://192.168.0.32:5000/
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2025-05-29 15:56:43,372 - __main__ - DEBUG - Body: b''
+2025-05-29 15:56:43,388 - __main__ - DEBUG - Response: b'{\n  "details": "Serial number: 0000000000000000675c62dc329d77cf, Firmware Version:  (API:1.08), Board ID Number: 2 (HackRF One)",\n  "message": "HackRF connect\\u00e9 \\u2705",\n  "status": "connected",\n  "timestamp": 1748527003\n}\n'
+2025-05-29 15:56:43,389 - werkzeug - INFO - 192.168.0.44 - - [29/May/2025 15:56:43] "GET /hackrf-status HTTP/1.1" 200 -
