@@ -10,6 +10,11 @@ app = Flask(__name__, static_folder='static')
 BASE_PATH = "/home/pi/lorareplay/signals/frequences"
 CLICK_COUNT_FILE = "/home/pi/lorareplay/click_count.txt"
 
+# Cache pour les réseaux WiFi
+last_scan_time = 0
+cached_networks = None
+SCAN_CACHE_DURATION = 10  # durée de validité du cache en secondes
+
 def read_click_count():
     if os.path.exists(CLICK_COUNT_FILE):
         with open(CLICK_COUNT_FILE, "r") as f:
@@ -78,16 +83,33 @@ def get_wifi_status():
 def get_current_wifi():
     """Obtient le réseau WiFi actuellement connecté"""
     try:
-        result = subprocess.run(['sudo', 'nmcli', '-t', '-f', 'NAME,TYPE', 'connection', 'show', '--active'],
+        result = subprocess.run(['sudo', 'nmcli', '-t', '-f', 'NAME,TYPE,DEVICE,STATE', 'connection', 'show', '--active'],
             capture_output=True,
             text=True
         )
         for line in result.stdout.splitlines():
-            if 'wireless' in line:
+            if 'wireless' in line and 'wlan0' in line and 'activated' in line:
                 return line.split(':')[0]
         return None
     except Exception:
         return None
+
+def check_wifi_state():
+    """Vérifie l'état de l'interface WiFi"""
+    try:
+        result = subprocess.run(['sudo', 'nmcli', 'radio', 'wifi'],
+            capture_output=True,
+            text=True
+        )
+        return 'enabled' in result.stdout
+    except Exception:
+        return False
+
+def ensure_wifi_enabled():
+    """S'assure que le WiFi est activé"""
+    if not check_wifi_state():
+        subprocess.run(['sudo', 'nmcli', 'radio', 'wifi', 'on'], capture_output=True)
+        time.sleep(1)
 
 @app.before_request
 def detect_device():
@@ -266,23 +288,34 @@ def get_ip():
 
 @app.route("/wifi-scan")
 def wifi_scan():
-    """Scanne les réseaux WiFi disponibles"""
+    """Scanne les réseaux WiFi disponibles avec mise en cache"""
+    global last_scan_time, cached_networks
+    current_time = time.time()
+    
     try:
-        # Force un rescan des réseaux WiFi
-        subprocess.run(['sudo', 'nmcli', 'radio', 'wifi', 'off'], capture_output=True)
-        time.sleep(1)
-        subprocess.run(['sudo', 'nmcli', 'radio', 'wifi', 'on'], capture_output=True)
-        time.sleep(2)
-        subprocess.run(['sudo', 'nmcli', 'device', 'wifi', 'rescan'], capture_output=True)
-        time.sleep(3)  # Augmente le délai d'attente pour le scan
+        # Utiliser le cache si disponible et récent
+        if cached_networks and (current_time - last_scan_time) < SCAN_CACHE_DURATION:
+            return jsonify(cached_networks)
+
+        ensure_wifi_enabled()
         
-        # Scan des réseaux
-        result = subprocess.run(['sudo', 'nmcli', '--fields', 'SSID,SIGNAL,SECURITY', '--terse', 'device', 'wifi', 'list'],
-            capture_output=True,
-            text=True
-        )
+        # Lance le scan en arrière-plan
+        subprocess.run(['sudo', 'nmcli', 'device', 'wifi', 'rescan'], capture_output=True)
+        
+        # Attente optimisée avec vérification progressive
+        for _ in range(3):  # 3 tentatives maximum
+            time.sleep(1)
+            result = subprocess.run(
+                ['sudo', 'nmcli', '--fields', 'SSID,SIGNAL,SECURITY', '--terse', 'device', 'wifi', 'list'],
+                capture_output=True,
+                text=True
+            )
+            if result.stdout.strip():  # Si on a des résultats, on arrête d'attendre
+                break
         
         networks = []
+        current_network = get_current_wifi()
+        
         for line in result.stdout.splitlines():
             if line:
                 ssid, signal, security = line.split(':')
@@ -296,9 +329,11 @@ def wifi_scan():
         # Trier par force du signal
         networks.sort(key=lambda x: x['signal'], reverse=True)
         
-        # Obtenir le réseau actuel
-        current_network = get_current_wifi()
-        return jsonify({'networks': networks, 'current_network': current_network})
+        # Mise à jour du cache
+        cached_networks = {'networks': networks, 'current_network': current_network}
+        last_scan_time = current_time
+        
+        return jsonify(cached_networks)
     except Exception as e:
         print("Erreur scan wifi:", str(e))
         return jsonify({'error': str(e)})
@@ -310,6 +345,7 @@ def wifi_status():
 
 @app.route("/connect_wifi", methods=["POST"])
 def wifi_connect():
+    """Connexion à un réseau WiFi avec gestion optimisée"""
     try:
         data = request.get_json()
         ssid = data.get('ssid')
@@ -318,26 +354,38 @@ def wifi_connect():
         if not ssid or not password:
             return jsonify({'success': False, 'error': 'SSID et mot de passe requis'})
 
+        ensure_wifi_enabled()
+        current_network = get_current_wifi()
+
+        if current_network == ssid:
+            # Déjà connecté à ce réseau
+            return jsonify({'success': True, 'message': 'Déjà connecté à ce réseau'})
+
         # Déconnexion du réseau actuel si nécessaire
-        subprocess.run(['sudo', 'nmcli', 'device', 'disconnect', 'wlan0'], capture_output=True)
-        time.sleep(1)
+        if current_network:
+            subprocess.run(['sudo', 'nmcli', 'device', 'disconnect', 'wlan0'], capture_output=True)
+            time.sleep(0.5)
 
-        # Suppression de l'ancienne connexion si elle existe
-        subprocess.run(['sudo', 'nmcli', 'connection', 'delete', ssid], capture_output=True)
-        time.sleep(1)
+        # Tentative de connexion avec timeout
+        try:
+            result = subprocess.run(
+                ['sudo', 'nmcli', 'device', 'wifi', 'connect', ssid, 'password', password],
+                capture_output=True,
+                text=True,
+                timeout=10  # Timeout de 10 secondes
+            )
 
-        # Tentative de connexion
-        result = subprocess.run(
-            ['sudo', 'nmcli', 'device', 'wifi', 'connect', ssid, 'password', password],
-            capture_output=True,
-            text=True
-        )
+            if result.returncode == 0:
+                # Vider le cache pour forcer un nouveau scan
+                global cached_networks, last_scan_time
+                cached_networks = None
+                last_scan_time = 0
+                return jsonify({'success': True})
+            else:
+                return jsonify({'success': False, 'error': result.stderr})
 
-        if result.returncode == 0:
-            return jsonify({'success': True})
-        else:
-            print("Erreur connexion wifi:", result.stderr)
-            return jsonify({'success': False, 'error': result.stderr})
+        except subprocess.TimeoutExpired:
+            return jsonify({'success': False, 'error': 'Timeout de connexion'})
 
     except Exception as e:
         print("Exception connexion wifi:", str(e))
