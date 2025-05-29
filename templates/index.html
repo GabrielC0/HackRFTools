@@ -125,7 +125,7 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 16px;
         padding: 20px;
-        z-index: 999;
+        z-index: 9999999;
         transform: translateX(100%) scale(0.8);
         opacity: 0;
         transition: all 0.3s ease;
@@ -657,9 +657,30 @@
         "
       >
         <!-- Section titre -->
-        <div style="display: flex; gap: 15px; align-items: flex-start;">
-          <div style="opacity: 0.9; margin-top: 5px; background: rgba(30, 41, 59, 0.5); padding: 8px; border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 12px; backdrop-filter: blur(8px);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #3b82f6;">
+        <div style="display: flex; gap: 15px; align-items: flex-start">
+          <div
+            style="
+              opacity: 0.9;
+              margin-top: 5px;
+              background: rgba(30, 41, 59, 0.5);
+              padding: 8px;
+              border: 1px solid rgba(148, 163, 184, 0.2);
+              border-radius: 12px;
+              backdrop-filter: blur(8px);
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="color: #3b82f6"
+            >
               <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"></path>
               <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"></path>
               <circle cx="12" cy="12" r="2"></circle>
@@ -668,16 +689,23 @@
             </svg>
           </div>
           <div>
-            <h1 class="title" style="margin-bottom: 4px; font-size: 1.5em; text-align: left">
+            <h1
+              class="title"
+              style="margin-bottom: 4px; font-size: 1.5em; text-align: left"
+            >
               HackRF Controller
             </h1>
-            <p class="subtitle" style="font-size: 0.9em; text-align: left; margin: 0;">
+            <p
+              class="subtitle"
+              style="font-size: 0.9em; text-align: left; margin: 0"
+            >
               RF Control Interface v1
             </p>
           </div>
         </div>
 
-        <!-- Section statuts -->          <div style="display: flex; gap: 10px; align-items: center">
+        <!-- Section statuts -->
+        <div style="display: flex; gap: 10px; align-items: center">
           <div
             style="
               display: flex;
@@ -697,52 +725,6 @@
             <span style="font-weight: 600; font-size: 0.8em">CONNECTED</span>
           </div>
         </div>
-
-        <!-- Section paramètres -->
-        <button
-          class="inline-flex items-center justify-center text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-slate-300 hover:text-white transition-all duration-200"
-          type="button"
-          onclick="toggleSettings()"
-          aria-haspopup="dialog"
-          aria-expanded="false"
-          data-state="closed"
-          style="
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(
-              135deg,
-              rgba(255, 255, 255, 0.05),
-              rgba(255, 255, 255, 0.1)
-            );
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-origin: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          "
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-5 w-5"
-          >
-            <path
-              d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
-            ></path>
-            <circle cx="12" cy="12" r="3"></circle>
-          </svg>
-        </button>
       </div>
     </div>
 
@@ -765,27 +747,7 @@
       "
     >
       <a
-        href="/"
-        class="nav-btn active"
-        style="
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.25);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 5px;
-          font-size: 22px;
-          color: white;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        "
-      >
-        <i class="fas fa-satellite-dish"></i>
-      </a>
-      <a
-        href="/wifi.html"
+        href="/wifi"
         class="nav-btn"
         style="
           width: 60px;
@@ -806,7 +768,7 @@
       </a>
       <div
         class="nav-btn"
-        onclick="window.location.reload()"
+        onclick="toggleSettings()"
         style="
           width: 60px;
           height: 60px;
@@ -822,35 +784,29 @@
           transition: all 0.3s ease;
         "
       >
-        <i class="fas fa-sync-alt"></i>
-      </div>
-      <div
-        class="nav-btn"
-        onclick="showExitKioskModal()"
-        style="
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.1);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 5px;
-          font-size: 22px;
-          color: white;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        "
-        title="Quitter le mode kiosque"
-      >
-        <i class="fas fa-sign-out-alt"></i>
+        <i class="fas fa-cog"></i>
       </div>
     </div>
 
     <!-- Menu Paramètres -->
+    <div
+      class="settings-overlay"
+      id="settingsOverlay"
+      onclick="toggleSettings()"
+    ></div>
     <div class="settings-menu" id="settingsMenu">
+      <div class="settings-menu-header">
+        <div class="settings-menu-title">System Configuration</div>
+        <button class="close-button" onclick="toggleSettings()"></button>
+      </div>
+
       <div class="settings-item">
-        <div class="settings-label">Compteur de clics</div>
+        <div class="settings-label">HackRF Status</div>
+        <div class="status-text" id="hackrfStatus">ONLINE</div>
+      </div>
+
+      <div class="settings-item">
+        <div class="settings-label">Usage Statistics</div>
         <div class="counter-display" id="clickCounter">0</div>
       </div>
 
@@ -859,13 +815,13 @@
           class="settings-btn reset-btn"
           onclick="showConfirmation('reset')"
         >
-          <i class="fas fa-undo"></i> Reset
+          <i class="fas fa-undo"></i> Reset Counter
         </button>
         <button
           class="settings-btn shutdown-btn"
           onclick="showConfirmation('shutdown')"
         >
-          <i class="fas fa-power-off"></i> Éteindre
+          <i class="fas fa-power-off"></i> Shutdown Raspberry Pi
         </button>
       </div>
     </div>
@@ -1171,14 +1127,17 @@
       // Gestion du menu paramètres
       function toggleSettings() {
         const menu = document.getElementById("settingsMenu");
+        const overlay = document.getElementById("settingsOverlay");
         settingsOpen = !settingsOpen;
 
         if (settingsOpen) {
           menu.classList.add("active");
+          overlay.classList.add("active");
           // Simuler la vérification du statut HackRF
           checkHackRFStatus();
         } else {
           menu.classList.remove("active");
+          overlay.classList.remove("active");
         }
       }
 
