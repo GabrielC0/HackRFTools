@@ -5,7 +5,8 @@ After=network.target
 [Service]
 User=pi
 WorkingDirectory=/home/pi/lorareplay
-ExecStart=/usr/bin/python3 /home/pi/lorareplay/server.py
+Environment=PATH=/home/pi/lorareplay/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/home/pi/lorareplay/venv/bin/python /home/pi/lorareplay/server.py
 Restart=always
 RestartSec=5
 StandardOutput=syslog
