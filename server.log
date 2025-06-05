@@ -43075,3 +43075,381 @@ Accept-Language: en-US,en;q=0.9
 2025-06-05 21:22:25,973 - __main__ - DEBUG - Body: b''
 2025-06-05 21:22:25,980 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151345\n}\n'
 2025-06-05 21:22:25,980 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:25] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:28,970 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:28,971 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:28,978 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151348\n}\n'
+2025-06-05 21:22:28,979 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:28] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:29,062 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:29,062 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:29,069 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-06-05 21:22:29,070 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:29] "GET /wifi-status HTTP/1.1" 200 -
+2025-06-05 21:22:31,972 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:31,974 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:31,983 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151351\n}\n'
+2025-06-05 21:22:31,984 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:31] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:34,092 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:34,092 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:34,096 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:34,096 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:34,107 - __main__ - DEBUG - Response: b'{\n  "ip_info": {\n    "wlan0": "192.168.0.32"\n  },\n  "status": "success"\n}\n'
+2025-06-05 21:22:34,108 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:34] "GET /get-ip HTTP/1.1" 200 -
+2025-06-05 21:22:34,109 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-06-05 21:22:34,110 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:34] "GET /wifi-status HTTP/1.1" 200 -
+2025-06-05 21:22:34,976 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:34,978 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:34,982 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:34,983 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:34,997 - __main__ - DEBUG - Response: b'{\n  "ip_info": {\n    "wlan0": "192.168.0.32"\n  },\n  "status": "success"\n}\n'
+2025-06-05 21:22:34,998 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:34] "GET /get-ip HTTP/1.1" 200 -
+2025-06-05 21:22:35,004 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151355\n}\n'
+2025-06-05 21:22:35,005 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:35] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:37,971 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:37,972 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:37,980 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151357\n}\n'
+2025-06-05 21:22:37,981 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:37] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:39,061 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:39,063 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:39,069 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-06-05 21:22:39,069 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:39] "GET /wifi-status HTTP/1.1" 200 -
+2025-06-05 21:22:40,974 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:40,975 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:40,987 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151360\n}\n'
+2025-06-05 21:22:40,988 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:40] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:43,973 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:43,974 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:43,988 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151363\n}\n'
+2025-06-05 21:22:43,989 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:43] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:44,064 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:44,067 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:44,085 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-06-05 21:22:44,088 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:44] "GET /wifi-status HTTP/1.1" 200 -
+2025-06-05 21:22:46,971 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:46,971 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:46,978 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151366\n}\n'
+2025-06-05 21:22:46,979 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:46] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:49,065 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:49,066 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:49,078 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-06-05 21:22:49,079 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:49] "GET /wifi-status HTTP/1.1" 200 -
+2025-06-05 21:22:49,970 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:49,971 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:49,978 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151369\n}\n'
+2025-06-05 21:22:49,979 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:49] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:52,970 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:52,971 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:52,978 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151372\n}\n'
+2025-06-05 21:22:52,979 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:52] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:54,061 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:54,062 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:54,068 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-06-05 21:22:54,069 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:54] "GET /wifi-status HTTP/1.1" 200 -
+2025-06-05 21:22:55,972 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:55,973 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:55,983 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151375\n}\n'
+2025-06-05 21:22:55,984 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:55] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:58,971 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:58,971 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:58,978 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151378\n}\n'
+2025-06-05 21:22:58,979 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:58] "GET /hackrf-status HTTP/1.1" 200 -
+2025-06-05 21:22:59,061 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/wifi.html
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:22:59,062 - __main__ - DEBUG - Body: b''
+2025-06-05 21:22:59,074 - __main__ - DEBUG - Response: b'{\n  "connected": true,\n  "ip": "192.168.0.32",\n  "ssid": "r\\u00e9seaux 5"\n}\n'
+2025-06-05 21:22:59,075 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:22:59] "GET /wifi-status HTTP/1.1" 200 -
+2025-06-05 21:23:01,970 - __main__ - DEBUG - Headers: Host: localhost:5000
+Connection: keep-alive
+Sec-Ch-Ua-Platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+Sec-Ch-Ua: "Chromium";v="137", "Not/A)Brand";v="24"
+Sec-Ch-Ua-Mobile: ?0
+Accept: */*
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:5000/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+
+
+2025-06-05 21:23:01,971 - __main__ - DEBUG - Body: b''
+2025-06-05 21:23:01,978 - __main__ - DEBUG - Response: b'{\n  "message": "HackRF non d\\u00e9tect\\u00e9 \\u274c",\n  "status": "disconnected",\n  "timestamp": 1749151381\n}\n'
+2025-06-05 21:23:01,979 - werkzeug - INFO - 127.0.0.1 - - [05/Jun/2025 21:23:01] "GET /hackrf-status HTTP/1.1" 200 -
